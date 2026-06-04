@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gustavo Cárdenas | Arquitecto de Software</title>
+    <meta name="description" content="Arquitecto de Software especializado en Laravel, plataformas SaaS, APIs e integraciones empresariales. Diseño y construcción de productos digitales escalables.">
+    <meta name="author" content="Gustavo Cárdenas">
+
+    <meta property="og:title" content="Gustavo Cárdenas | Arquitecto de Software">
+    <meta property="og:description" content="Especialista en Laravel, plataformas SaaS, APIs e integraciones empresariales.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gcardenas.cl/assets/img/og-image.jpg">
+    <meta property="og:url" content="https://gcardenas.cl">
+
+<!--    icon-->
+    <link rel="icon" type="image/png" href="assets/img/isotipo-white.png" sizes="32x32" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="assets/js/tailwind-script.js"></script>
+
+    <style id="portfolio-animations">
+        :root{--lila:#5b4663;--celeste:#4cd7f6;--celeste2:#57dffe}
+        body{overflow-x:hidden}
+        .reveal{opacity:0;transform:translateY(28px);filter:blur(4px);transition:opacity .75s ease,transform .75s cubic-bezier(.22,1,.36,1),filter .75s ease;will-change:opacity,transform,filter}
+        .reveal-left{transform:translateX(-34px)}
+        .reveal-right{transform:translateX(34px)}
+        .reveal-scale{transform:scale(.96)}
+        .reveal.is-visible,.reveal-left.is-visible,.reveal-right.is-visible,.reveal-scale.is-visible{opacity:1;transform:translate(0,0) scale(1);filter:blur(0)}
+        header{transition:background-color .25s ease,box-shadow .25s ease,border-color .25s ease}
+        header.header-scrolled{background-color:rgba(32,36,38,.98);border-color:rgba(255,255,255,.16)}
+        header nav img{transition:transform .25s ease,opacity .25s ease}
+        header nav a:hover img{transform:translateY(-1px) scale(1.02);opacity:.96}
+        header nav div a{position:relative}
+        header nav div a::after{content:"";position:absolute;left:0;bottom:-7px;width:100%;height:2px;background:var(--celeste);transform:scaleX(0);transform-origin:right;transition:transform .25s ease;opacity:.9}
+        header nav div a:hover::after,header nav div a.active-nav::after{transform:scaleX(1);transform-origin:left}
+        .hero-grid{animation:gridDrift 28s linear infinite}
+        .hero-blob{animation:floatBlob 13s ease-in-out infinite}
+        .hero-blob-alt{animation:floatBlobAlt 15s ease-in-out infinite}
+        .hero-photo{animation:heroFloat 7s ease-in-out infinite}
+        .hero-icon{animation:iconFloat 5.5s ease-in-out infinite}
+        .hero-icon-alt{animation:iconFloatAlt 6.5s ease-in-out infinite}
+        .text-accent-glow{text-shadow:0 0 24px rgba(76,215,246,.2)}
+        .hero-stat,.motion-card,.dark-card,.cta-button{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background-color .25s ease}
+        .hero-stat:hover{transform:translateY(-4px);border-color:rgba(76,215,246,.35);background:rgba(255,255,255,.085)}
+        .motion-card:hover{transform:translateY(-7px);box-shadow:0 22px 55px rgba(25,28,30,.12);border-color:rgba(91,70,99,.38)}
+        .dark-card:hover{transform:translateY(-7px);border-color:rgba(76,215,246,.34);background:rgba(255,255,255,.085)}
+        .motion-card .material-symbols-outlined,.dark-card .material-symbols-outlined{transition:transform .25s ease}
+        .motion-card:hover .material-symbols-outlined,.dark-card:hover .material-symbols-outlined{transform:translateY(-2px) scale(1.08)}
+        .cta-button:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(76,215,246,.18)}
+        input,textarea,select{transition:border-color .2s ease,background-color .2s ease,box-shadow .2s ease}
+        input:focus,textarea:focus,select:focus{box-shadow:0 0 0 4px rgba(76,215,246,.12)}
+        .timeline-line::before{transform-origin:top;transform:scaleY(0);transition:transform 1.1s ease}
+        .timeline-line.timeline-visible::before{transform:scaleY(1)}
+        .timeline-dot{transition:transform .25s ease,box-shadow .25s ease}
+        article:hover .timeline-dot{transform:scale(1.12);box-shadow:0 0 0 6px rgba(91,70,99,.10)}
+        @keyframes gridDrift{0%{background-position:0 0}100%{background-position:72px 72px}}
+        @keyframes floatBlob{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-24px,18px,0) scale(1.06)}}
+        @keyframes floatBlobAlt{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(28px,-18px,0) scale(1.04)}}
+        @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+        @keyframes iconFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(3deg)}}
+        @keyframes iconFloatAlt{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(9px) rotate(-3deg)}}
+        @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1;transform:none;filter:none}.timeline-line::before{transform:scaleY(1)}}
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface">
+
+<header class="sticky top-0 z-50 bg-inverse-surface/95 backdrop-blur border-b border-white/10">
+    <nav class="max-w-container-max mx-auto px-gutter">
+        <!-- Fila principal -->
+        <div class="h-16 lg:h-20 flex items-center justify-between">
+            <a href="#inicio" class="text-white font-extrabold tracking-tight text-xl shrink-0">
+                <img
+                        src="assets/img/gcardenas_logo_white.png"
+                        alt="logo gustavo cardenas"
+                        class="w-[145px] sm:w-[165px] lg:w-[190px] h-auto transition-all duration-300"
+                >
+            </a>
+
+            <!-- Menú desktop -->
+            <div class="hidden lg:flex items-center gap-7 text-sm font-semibold">
+                <a href="#sobre-mi" class="text-white/75 hover:text-[#4cd7f6] transition">Sobre mí</a>
+                <a href="#especialidades" class="text-white/75 hover:text-[#4cd7f6] transition">Especialidades</a>
+                <a href="#casos" class="text-white/75 hover:text-[#4cd7f6] transition">Productos</a>
+                <a href="#experiencia" class="text-white/75 hover:text-[#4cd7f6] transition">Experiencia</a>
+                <a href="#stack" class="text-white/75 hover:text-[#4cd7f6] transition">Stack</a>
+            </div>
+
+            <a href="#contacto" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[#57dffe] text-[#001f26] font-bold text-sm hover:bg-[#4cd7f6] transition cta-button">
+                Conversemos
+            </a>
+        </div>
+
+        <!-- Menú mobile con íconos -->
+        <div class="lg:hidden border-t border-white/10 overflow-x-auto mobile-nav-scroll">
+            <div class="flex items-center justify-between min-w-max gap-3 py-3">
+
+                <a href="#sobre-mi"
+                   class="mobile-nav-item text-[#4cd7f6]"
+                   aria-label="Sobre mí"
+                   title="Sobre mí">
+                    <span class="material-symbols-outlined">person_search</span>
+                </a>
+
+                <a href="#especialidades"
+                   class="mobile-nav-item text-[#4cd7f6]"
+                   aria-label="Especialidades"
+                   title="Especialidades">
+                    <span class="material-symbols-outlined">architecture</span>
+                </a>
+
+                <a href="#casos"
+                   class="mobile-nav-item text-[#4cd7f6]"
+                   aria-label="Casos de estudio"
+                   title="Productos">
+                    <span class="material-symbols-outlined">deployed_code</span>
+                </a>
+
+                <a href="#experiencia"
+                   class="mobile-nav-item text-[#4cd7f6]"
+                   aria-label="Experiencia"
+                   title="Experiencia">
+                    <span class="material-symbols-outlined">work_history</span>
+                </a>
+
+                <a href="#stack"
+                   class="mobile-nav-item text-[#4cd7f6]"
+                   aria-label="Stack técnico"
+                   title="Stack técnico">
+                    <span class="material-symbols-outlined">dns</span>
+                </a>
+
+                <a href="#contacto"
+                   class="mobile-nav-item text-[#4cd7f6]"
+                   aria-label="Contacto"
+                   title="Contacto">
+                    <span class="material-symbols-outlined">mail</span>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section id="inicio" class="relative min-h-[760px] flex items-center bg-inverse-surface overflow-hidden py-24">
+        <div class="absolute inset-0 hero-grid opacity-100"></div>
+        <div class="absolute top-24 right-[-8rem] w-[26rem] h-[26rem] bg-[#5b4663]/30 blur-[120px] rounded-full hero-blob"></div>
+        <div class="absolute bottom-16 left-[-8rem] w-[24rem] h-[24rem] bg-secondary-fixed-dim/18 blur-[110px] rounded-full hero-blob-alt"></div>
+
+        <div class="relative z-10 max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[1.15fr_.85fr] gap-16 items-center">
+            <div class="text-white reveal reveal-left">
+                <p class="section-label text-[#4cd7f6] mb-5">Arquitectura · SaaS · APIs · Laravel</p>
+
+                <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[1.05] mb-6">
+                    Gustavo <span class="text-[#4cd7f6] text-accent-glow">Cárdenas</span>
+                </h1>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-white/90 mb-6 max-w-3xl">
+                    Arquitecto de Software especializado en Laravel, plataformas SaaS e integraciones empresariales.
+                </h2>
+
+                <p class="text-lg md:text-xl leading-relaxed text-white/70 max-w-2xl">
+                    Diseño y construyo productos digitales, APIs y sistemas empresariales con foco en escalabilidad,
+                    trazabilidad, seguridad y mantenibilidad en producción.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mt-9">
+                    <a href="#casos" class="px-7 py-3 rounded-lg bg-[#57dffe] text-[#001f26] font-bold hover:bg-[#4cd7f6] transition shadow-lg cta-button">
+                        Ver últimos proyectos
+                    </a>
+                    <a href="#contacto" class="px-7 py-3 rounded-lg border border-[#4cd7f6] text-[#4cd7f6] font-bold hover:bg-[#4cd7f6]/10 transition cta-button">
+                        Contactar
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-3xl">
+                    <div class="glass-card rounded-xl p-5 hero-stat">
+                        <div class="text-3xl font-black text-[#4cd7f6] counter" data-count="10" data-suffix="+">10+</div>
+                        <div class="text-sm text-white/65 mt-1">años de experiencia</div>
+                    </div>
+                    <div class="glass-card rounded-xl p-5 hero-stat">
+                        <div class="text-3xl font-black text-[#4cd7f6] counter" data-count="13" data-suffix="+">13+</div>
+                        <div class="text-sm text-white/65 mt-1">clientes e instituciones</div>
+                    </div>
+                    <div class="glass-card rounded-xl p-5 hero-stat">
+                        <div class="text-3xl font-black text-[#4cd7f6] counter" data-count="3">3</div>
+                        <div class="text-sm text-white/65 mt-1">productos SaaS</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center lg:justify-end reveal reveal-right">
+                <div class="relative w-72 h-72 md:w-96 md:h-96">
+                    <div class="absolute inset-0 bg-secondary-fixed-dim/18 rounded-full blur-2xl"></div>
+                    <div class="relative z-10 w-full h-full rounded-full border-4 border-[#4cd7f6]/30 overflow-hidden bg-inverse-surface-soft shadow-2xl hero-photo">
+                        <img
+                                src="assets/img/hero_img.png"
+                                alt="Gustavo Cárdenas"
+                                class="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    <div class="absolute -top-4 -right-4 w-14 h-14 glass-card rounded-xl flex items-center justify-center hero-icon">
+                        <span class="material-symbols-outlined text-[#4cd7f6]">architecture</span>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 w-14 h-14 glass-card rounded-xl flex items-center justify-center hero-icon-alt">
+                        <span class="material-symbols-outlined text-[#4cd7f6]">terminal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-section-gap">
+        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[1fr_.85fr] gap-14 items-start">
+            <div class="reveal reveal-left">
+                <p class="section-label text-[#5b4663] mb-4">Sobre mí</p>
+                <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-7">
+                    Producto, arquitectura y ejecución técnica.
+                </h2>
+
+                <div class="space-y-5 text-on-surface-variant text-lg leading-relaxed">
+                    <p>
+                        Soy Arquitecto de Software especializado en Laravel, plataformas SaaS e integraciones empresariales.
+                    </p>
+                    <p>
+                        Disfruto participar en la creación de productos digitales completos, desde el diseño de la solución
+                        y la definición de la arquitectura hasta su desarrollo, despliegue y operación en producción.
+                    </p>
+                    <p>
+                        Mi enfoque combina visión de negocio, ingeniería de software y disciplina técnica para construir
+                        plataformas robustas, escalables y mantenibles en el tiempo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">schema</span>
+                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">Arquitectura</h3>
+                    <p class="text-on-surface-variant">Diseño de sistemas escalables, mantenibles y preparados para crecer.</p>
+                </div>
+                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">hub</span>
+                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">Integraciones</h3>
+                    <p class="text-on-surface-variant">APIs, servicios externos, automatización y comunicación entre plataformas.</p>
+                </div>
+                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">deployed_code</span>
+                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">SaaS</h3>
+                    <p class="text-on-surface-variant">Productos multiempresa con foco en operación, seguridad y trazabilidad.</p>
+                </div>
+                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">groups</span>
+                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">Liderazgo técnico</h3>
+                    <p class="text-on-surface-variant">Coordinación entre negocio, tecnología, equipos internos y proveedores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="especialidades" class="py-section-gap bg-surface-container-low">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <div class="max-w-3xl mb-12 reveal">
+                <p class="section-label text-[#5b4663] mb-4">Especialidades</p>
+                <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-5">
+                    Servicios de alto impacto técnico.
+                </h2>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                    Apoyo a empresas que necesitan ordenar, escalar o modernizar sus plataformas digitales sin perder control técnico ni visión de negocio.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">architecture</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Arquitectura de Software</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Diseño de soluciones, separación de responsabilidades, servicios, trazabilidad, seguridad y mantenibilidad.</p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">api</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">APIs e Integraciones</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Diseño e implementación de APIs REST, integración con servicios externos y automatización de procesos críticos.</p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">cloud_done</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Plataformas SaaS</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Construcción de productos multiempresa orientados a operación real, escalabilidad y evolución continua.</p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">code_blocks</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Desarrollo Laravel</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Aplicaciones backend, paneles administrativos, servicios, jobs, eventos, reportes y flujos de negocio.</p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">query_stats</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Auditoría y modernización</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Revisión de deuda técnica, rendimiento, estructura, base de datos, seguridad y capacidad de crecimiento.</p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">assignment_turned_in</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Liderazgo técnico</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Traducción de requerimientos de negocio a historias, planificación, control técnico y validación funcional.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="casos" class="py-section-gap bg-inverse-surface text-white">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 reveal">
+                <div>
+                    <p class="section-label text-[#4cd7f6] mb-4">Mis productos</p>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tight">
+                        Productos y soluciones reales.
+                    </h2>
+                </div>
+                <p class="text-white/60 text-lg max-w-xl">
+                    Selección de plataformas donde he participado desde arquitectura, desarrollo, integración, operación o liderazgo técnico.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="glass-card rounded-2xl p-7 dark-card reveal reveal-scale">
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div>
+                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">SaaS · Certificación Digital</p>
+                            <h3 class="text-2xl font-black">Audicert</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">verified</span>
+
+                    </div>
+                    <p class="text-white/80 font-bold text-sm mb-4">
+                        Rol: Cofundador, CTO, arquitectura SaaS, backend Laravel y operación técnica.
+                    </p>
+                    <p class="text-white/70 leading-relaxed mb-5">
+                        Plataforma SaaS para emisión masiva de certificados digitales, validación pública mediante QR,
+                        gestión documental y trazabilidad completa para OTEC e instituciones.
+                    </p>
+                    <ul class="space-y-2 text-white/70 mb-6">
+                        <li>• Arquitectura multiinstitución.</li>
+                        <li>• Generación de PDF y plantillas dinámicas.</li>
+                        <li>• Validación pública y trazabilidad operacional.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Laravel</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">MySQL</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">APIs</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">QR/PDF</span>
+                    </div>
+                    <a href="#contacto" class="inline-flex items-center gap-2 text-[#4cd7f6] font-bold text-sm mt-5 hover:gap-3 transition-all">
+                        Conversar sobre un proyecto similar
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </article>
+
+                <article class="glass-card rounded-2xl p-7 dark-card reveal reveal-scale">
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div>
+                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">SaaS · Activos y Documentos</p>
+                            <h3 class="text-2xl font-black">EnlacePro</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">inventory_2</span>
+                    </div>
+                    <p class="text-white/80 font-bold text-sm mb-4">
+                        Rol: Fundador, arquitectura de producto, diseño funcional y desarrollo completo.
+                    </p>
+                    <p class="text-white/70 leading-relaxed mb-5">
+                        Plataforma para conectar activos, documentos y personas en un único sistema, reduciendo pérdidas de información,
+                        vencimientos, incumplimientos y desorden operativo.
+                    </p>
+                    <ul class="space-y-2 text-white/70 mb-6">
+                        <li>• Gestión de activos, documentos y responsables.</li>
+                        <li>• Alertas de vencimiento e historial trazable.</li>
+                        <li>• Producto en validación con clientes piloto.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Laravel</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">SaaS</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Multiempresa</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Trazabilidad</span>
+                    </div>
+                    <a href="#contacto" class="inline-flex items-center gap-2 text-[#4cd7f6] font-bold text-sm mt-5 hover:gap-3 transition-all">
+                        Conversar sobre un proyecto similar
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </article>
+
+                <article class="glass-card rounded-2xl p-7 dark-card reveal reveal-scale">
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div>
+                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">Microservicio · Mensajería</p>
+                            <h3 class="text-2xl font-black">Sender</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">outgoing_mail</span>
+                    </div>
+                    <p class="text-white/80 font-bold text-sm mb-4">
+                        Rol: Diseño del servicio, API REST y desacoplamiento del ecosistema.
+                    </p>
+                    <p class="text-white/70 leading-relaxed mb-5">
+                        Servicio desacoplado para centralizar envío de correos transaccionales y comunicaciones del ecosistema,
+                        reduciendo dependencia entre aplicaciones.
+                    </p>
+                    <ul class="space-y-2 text-white/70 mb-6">
+                        <li>• API REST para envío transaccional.</li>
+                        <li>• Separación de responsabilidades entre productos.</li>
+                        <li>• Base para comunicaciones escalables.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Laravel</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">API REST</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Mensajería</span>
+                    </div>
+                    <a href="#contacto" class="inline-flex items-center gap-2 text-[#4cd7f6] font-bold text-sm mt-5 hover:gap-3 transition-all">
+                        Conversar sobre un proyecto similar
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </article>
+
+                <article class="glass-card rounded-2xl p-7 dark-card reveal reveal-scale">
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div>
+                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">GPS · Integración · Eventos</p>
+                            <h3 class="text-2xl font-black">ISI-Track</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">map</span>
+                    </div>
+                    <p class="text-white/80 font-bold text-sm mb-4">
+                        Rol: Ingeniería backend, integración Traccar y normalización de eventos GPS.
+                    </p>
+                    <p class="text-white/70 leading-relaxed mb-5">
+                        Suite basada en Traccar para gestionar eventos GPS de forma estandarizada, independiente del modelo,
+                        fabricante o protocolo de comunicación del dispositivo.
+                    </p>
+                    <ul class="space-y-2 text-white/70 mb-6">
+                        <li>• Capa de abstracción para eventos de distintos dispositivos.</li>
+                        <li>• Visualización de flotas, alertas y reportes.</li>
+                        <li>• Integración directa con API de Traccar.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Laravel</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">MySQL</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Traccar API</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">GPS</span>
+                    </div>
+                    <a href="#contacto" class="inline-flex items-center gap-2 text-[#4cd7f6] font-bold text-sm mt-5 hover:gap-3 transition-all">
+                        Conversar sobre un proyecto similar
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia" class="py-section-gap">
+        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[.75fr_1.25fr] gap-14">
+            <div class="reveal reveal-left">
+                <p class="section-label text-[#5b4663] mb-4">Experiencia</p>
+                <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-5">
+                    Trayectoria orientada a resultados.
+                </h2>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                    Experiencia combinando arquitectura, desarrollo, coordinación de equipos e integración entre negocio y tecnología.
+                </p>
+            </div>
+
+            <div class="timeline-line pl-10 space-y-10 reveal reveal-right">
+
+                <article class="relative">
+                    <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-[#5b4663] border-4 border-white timeline-dot"></div>
+
+                    <h3 class="text-xl text-[#5b4663] font-black">
+                        Fundador y Arquitecto de Producto
+                    </h3>
+
+                    <p class="text-[#5b4663] font-bold mt-1">
+                        EnlacePro · Enero 2026 - Actualidad
+                    </p>
+
+                    <p class="text-on-surface-variant mt-3 leading-relaxed">
+                        Responsable de producto, arquitectura, desarrollo y estrategia de una plataforma SaaS para gestión de activos,
+                        documentos, responsables, alertas y trazabilidad operacional.
+                    </p>
+                </article>
+
+                <article class="relative">
+                    <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-[#5b4663] border-4 border-white timeline-dot"></div>
+
+                    <h3 class="text-xl text-[#5b4663] font-black">
+                        Cofundador y Director de Tecnología (CTO)
+                    </h3>
+
+                    <p class="text-[#5b4663] font-bold mt-1">
+                        Audicert · Septiembre 2025 - Actualidad
+                    </p>
+
+                    <p class="text-on-surface-variant mt-3 leading-relaxed">
+                        Lidero la estrategia tecnológica, arquitectura y desarrollo de una plataforma SaaS para certificación digital,
+                        validación pública, gestión documental y trazabilidad de procesos.
+                    </p>
+                </article>
+
+                <article class="relative">
+                    <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-[#5b4663] border-4 border-white timeline-dot"></div>
+
+                    <h3 class="text-xl text-[#5b4663] font-black">
+                        Ingeniero de Software
+                    </h3>
+
+                    <p class="text-[#5b4663] font-bold mt-1">
+                        Dimagex · Enero 2025 - Noviembre 2025
+                    </p>
+
+                    <p class="text-on-surface-variant mt-3 leading-relaxed">
+                        Desarrollo de soluciones de integración, automatización y gestión de información en tiempo real,
+                        incluyendo ISI-Track y soluciones conectadas a Dentalink.
+                    </p>
+                </article>
+
+                <article class="relative">
+                    <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-[#5b4663] border-4 border-white timeline-dot"></div>
+
+                    <h3 class="text-xl text-[#5b4663] font-black">
+                        Business Partner TIC
+                    </h3>
+
+                    <p class="text-[#5b4663] font-bold mt-1">
+                        Abastible / Kibernum · Septiembre 2023 - Noviembre 2024
+                    </p>
+
+                    <p class="text-on-surface-variant mt-3 leading-relaxed">
+                        Coordinación entre marketing digital, negocio, TI, proveedores y equipos internos. Traducción de requerimientos
+                        a historias de usuario, planificación, control y validación de entregables.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="stack" class="py-section-gap bg-surface-container-low">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <div class="max-w-3xl mb-12 reveal">
+                <p class="section-label text-[#5b4663] mb-4">Stack técnico</p>
+                <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-5">
+                    Herramientas principales.
+                </h2>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                    Tecnologías que uso para construir sistemas backend, APIs, plataformas SaaS e integraciones empresariales.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <h3 class="font-black text-[#5b4663] text-lg mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#5b4663]">dns</span>
+                        Backend
+                    </h3>
+
+                    <ul class="space-y-3 text-on-surface-variant">
+                        <li>PHP / Laravel</li>
+                        <li>.NET / C#</li>
+                        <li>JavaScript / Node.js</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <h3 class="font-black text-[#5b4663] text-lg mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#5b4663]">database</span> Datos
+                    </h3>
+                    <ul class="space-y-3 text-on-surface-variant">
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                        <li>SQL Server</li>
+                        <li>Modelado relacional</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <h3 class="font-black text-[#5b4663] text-lg mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#5b4663]">api</span> Integración
+                    </h3>
+                    <ul class="space-y-3 text-on-surface-variant">
+                        <li>APIs REST</li>
+                        <li>Servicios externos</li>
+                        <li>Automatización de procesos</li>
+                        <li>Mensajería transaccional</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <h3 class="font-black text-[#5b4663] text-lg mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#5b4663]">account_tree</span> Arquitectura
+                    </h3>
+                    <ul class="space-y-3 text-on-surface-variant">
+                        <li>SaaS multiempresa</li>
+                        <li>Diseño de sistemas</li>
+                        <li>Trazabilidad y auditoría</li>
+                        <li>Seguridad y mantenibilidad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-section-gap bg-inverse-surface text-white">
+        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[.9fr_1.1fr] gap-14 items-start">
+            <div class="reveal reveal-left">
+                <p class="section-label text-[#4cd7f6] mb-4">Contacto</p>
+                <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-6">
+                    ¿Necesitas diseñar, ordenar o escalar una plataforma?
+                </h2>
+                <p class="text-lg text-white/70 leading-relaxed mb-8">
+                    Puedo ayudarte a diseñar, ordenar o escalar plataformas Laravel, APIs e integraciones empresariales.
+                    También estoy abierto a oportunidades de liderazgo técnico o arquitectura de software.
+                </p>
+
+                <div class="space-y-4 text-white/80">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-[#4cd7f6]">mail</span>
+                        <span>
+                            <a href="mailto:hola@gcardenas.cl">hola@gcardenas.cl</a>
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-[#4cd7f6]">location_on</span>
+                        <span>Chile · Remoto</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-[#4cd7f6]">link</span>
+                        <span>
+                            <a href="https://www.linkedin.com/in/gustavo-cardenas-cl/" target="_blank" >linkedin</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="glass-card rounded-2xl p-7 space-y-5 reveal reveal-right" id="contact-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold text-white/70 mb-2">Nombre</label>
+                        <input class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Tu nombre" type="text" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-white/70 mb-2">Correo</label>
+                        <input class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="tu@email.com" type="email" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-white/70 mb-2">Tipo de necesidad</label>
+                    <select class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#4cd7f6]">
+                        <option class="text-on-surface">Arquitectura de software</option>
+                        <option class="text-on-surface">Desarrollo Software</option>
+                        <option class="text-on-surface">APIs e integraciones</option>
+                        <option class="text-on-surface">Consultoría técnica</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-white/70 mb-2">Mensaje</label>
+                    <textarea class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Cuéntame brevemente el contexto, objetivo o problema técnico." rows="5" required></textarea>
+                </div>
+
+                <button class="w-full bg-[#57dffe] text-[#001f26] py-4 rounded-lg font-black hover:bg-[#4cd7f6] transition active:scale-[0.98] cta-button" type="submit">
+                    Enviar mensaje
+                </button>
+
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-inverse-surface border-t border-white/10">
+    <div class="max-w-container-max mx-auto px-gutter py-8 flex flex-col md:flex-row justify-between items-center gap-5">
+        <div class="font-black text-white text-xl">
+            <img src="assets/img/isotipo-white.png" alt="gcardenas.cl" style="height: 40px;">
+        </div>
+        <p class="text-white/45 text-sm">© 2026 Gustavo Cárdenas. Todos los derechos reservados.</p>
+        <div class="flex gap-6 text-sm">
+            <a href="https://www.linkedin.com/in/gustavo-cardenas-cl" target="_blank" class="text-white/60 hover:text-[#4cd7f6] transition">LinkedIn</a>
+            <a href="https://github.com/GusCardenas" class="text-white/60 hover:text-[#4cd7f6] transition">GitHub</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Botón ir arriba -->
+<button
+        id="btn-ir-arriba"
+        class="fixed bottom-24 right-6 z-50 w-12 h-12 rounded-full bg-[#57dffe] text-[#001f26] shadow-lg flex items-center justify-center opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:bg-[#4cd7f6] hover:-translate-y-1"
+        aria-label="Ir arriba"
+        type="button"
+>
+    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+</button>
+
+<script>
+    const btnIrArriba = document.getElementById('btn-ir-arriba');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btnIrArriba.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+            btnIrArriba.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            btnIrArriba.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            btnIrArriba.classList.remove('opacity-100', 'translate-y-0');
+        }
+    });
+
+    btnIrArriba.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+<script id="portfolio-motion">
+    const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const header=document.querySelector('header');
+    function updateHeader(){if(window.scrollY>50){header.classList.add('shadow-xl','header-scrolled')}else{header.classList.remove('shadow-xl','header-scrolled')}}
+    updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
+
+    document.querySelectorAll('.reveal').forEach((el,i)=>{if(!el.style.transitionDelay){el.style.transitionDelay=`${Math.min((i%6)*70,350)}ms`}});
+
+    const navLinks=[...document.querySelectorAll('header nav div a[href^="#"]')];
+    const sections=navLinks.map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
+    function setActiveNav(){const current=sections.map(s=>({id:s.id,top:Math.abs(s.getBoundingClientRect().top-120)})).sort((a,b)=>a.top-b.top)[0];navLinks.forEach(l=>l.classList.toggle('active-nav',l.getAttribute('href')===`#${current?.id}`))}
+    window.addEventListener('scroll',setActiveNav,{passive:true});setActiveNav();
+
+    const revealItems=document.querySelectorAll('.reveal,.timeline-line');
+    if(!prefersReducedMotion&&'IntersectionObserver'in window){
+        const observer=new IntersectionObserver((entries,obs)=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add('is-visible');if(entry.target.classList.contains('timeline-line'))entry.target.classList.add('timeline-visible');obs.unobserve(entry.target)})},{threshold:.16,rootMargin:'0px 0px -60px 0px'});
+        revealItems.forEach(item=>observer.observe(item));
+    }else{revealItems.forEach(item=>item.classList.add('is-visible','timeline-visible'))}
+
+    function animateCounters(){
+        document.querySelectorAll('.counter').forEach(counter=>{
+            const target=Number(counter.dataset.count||0),suffix=counter.dataset.suffix||'',duration=900,start=performance.now();
+            counter.textContent=`0${suffix}`;
+            function tick(now){const p=Math.min((now-start)/duration,1),e=1-Math.pow(1-p,3);counter.textContent=`${Math.round(target*e)}${suffix}`;if(p<1)requestAnimationFrame(tick)}
+            requestAnimationFrame(tick);
+        });
+    }
+    const firstStat=document.querySelector('.hero-stat');
+    if(firstStat&&'IntersectionObserver'in window&&!prefersReducedMotion){
+        const co=new IntersectionObserver((entries,obs)=>{if(entries.some(e=>e.isIntersecting)){animateCounters();obs.disconnect()}},{threshold:.1,rootMargin:'0px 0px 0px 0px'});
+        co.observe(firstStat);
+        setTimeout(()=>{if(document.querySelector('.counter')?.textContent?.startsWith('8')) return; animateCounters(); co.disconnect();},700);
+    }else{animateCounters()}
+
+    document.getElementById('contact-form').addEventListener('submit',function(event){event.preventDefault();alert('Gracias por tu mensaje. Luego conectaremos este formulario a un endpoint real.');event.target.reset()});
+</script>
+</body>
+</html>

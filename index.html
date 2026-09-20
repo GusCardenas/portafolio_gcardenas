@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gustavo Cárdenas | Arquitecto de Software</title>
-    <meta name="description" content="Arquitecto de Software especializado en Laravel, plataformas SaaS, APIs e integraciones empresariales. Diseño y construcción de productos digitales escalables.">
+
+    <title>Gustavo Cárdenas | Automatización e Integración de Sistemas</title>
+    <meta name="description" content="Automatización de procesos, integración de sistemas y soluciones operativas para empresas. Elimina tareas manuales, doble digitación y flujos que consumen horas de tu equipo.">
     <meta name="author" content="Gustavo Cárdenas">
 
-    <meta property="og:title" content="Gustavo Cárdenas | Arquitecto de Software">
-    <meta property="og:description" content="Especialista en Laravel, plataformas SaaS, APIs e integraciones empresariales.">
+    <meta property="og:title" content="Gustavo Cárdenas | Automatización e Integración de Sistemas">
+    <meta property="og:description" content="Elimina trabajo manual de tu operación. Automatización, integración de sistemas y soluciones operativas con alcance claro.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://gcardenas.cl/assets/img/og-image.jpg">
     <meta property="og:url" content="https://gcardenas.cl">
 
-<!--    icon-->
     <link rel="icon" type="image/png" href="assets/img/isotipo-white.png" sizes="32x32" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -24,7 +24,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
-
     <script src="assets/js/tailwind-script.js"></script>
 
     <style id="portfolio-animations">
@@ -62,12 +61,16 @@
         .timeline-line.timeline-visible::before{transform:scaleY(1)}
         .timeline-dot{transition:transform .25s ease,box-shadow .25s ease}
         article:hover .timeline-dot{transform:scale(1.12);box-shadow:0 0 0 6px rgba(91,70,99,.10)}
+        .process-line{position:relative}
+        .process-line::before{content:"";position:absolute;top:31px;left:7%;right:7%;height:1px;background:linear-gradient(90deg,transparent,rgba(76,215,246,.4),transparent);z-index:0}
+        .service-featured{box-shadow:0 24px 70px rgba(76,215,246,.12);border-color:rgba(76,215,246,.5)}
         @keyframes gridDrift{0%{background-position:0 0}100%{background-position:72px 72px}}
         @keyframes floatBlob{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-24px,18px,0) scale(1.06)}}
         @keyframes floatBlobAlt{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(28px,-18px,0) scale(1.04)}}
         @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
         @keyframes iconFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(3deg)}}
         @keyframes iconFloatAlt{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(9px) rotate(-3deg)}}
+        @media(max-width:1023px){.process-line::before{display:none}}
         @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1;transform:none;filter:none}.timeline-line::before{transform:scaleY(1)}}
     </style>
 </head>
@@ -76,76 +79,32 @@
 
 <header class="sticky top-0 z-50 bg-inverse-surface/95 backdrop-blur border-b border-white/10">
     <nav class="max-w-container-max mx-auto px-gutter">
-        <!-- Fila principal -->
         <div class="h-16 lg:h-20 flex items-center justify-between">
             <a href="#inicio" class="text-white font-extrabold tracking-tight text-xl shrink-0">
-                <img
-                        src="assets/img/gcardenas_logo_white.png"
-                        alt="logo gustavo cardenas"
-                        class="w-[145px] sm:w-[165px] lg:w-[190px] h-auto transition-all duration-300"
-                >
+                <img src="assets/img/gcardenas_logo_white.png" alt="Gustavo Cárdenas" class="w-[145px] sm:w-[165px] lg:w-[190px] h-auto transition-all duration-300">
             </a>
 
-            <!-- Menú desktop -->
             <div class="hidden lg:flex items-center gap-7 text-sm font-semibold">
-                <a href="#sobre-mi" class="text-white/75 hover:text-[#4cd7f6] transition">Sobre mí</a>
-                <a href="#especialidades" class="text-white/75 hover:text-[#4cd7f6] transition">Especialidades</a>
-                <a href="#casos" class="text-white/75 hover:text-[#4cd7f6] transition">Productos</a>
-                <a href="#experiencia" class="text-white/75 hover:text-[#4cd7f6] transition">Experiencia</a>
-                <a href="#stack" class="text-white/75 hover:text-[#4cd7f6] transition">Stack</a>
+                <a href="#problemas" class="text-white/75 hover:text-[#4cd7f6] transition">Problemas</a>
+                <a href="#servicios" class="text-white/75 hover:text-[#4cd7f6] transition">Servicios</a>
+                <a href="#proceso" class="text-white/75 hover:text-[#4cd7f6] transition">Cómo trabajo</a>
+                <a href="#casos" class="text-white/75 hover:text-[#4cd7f6] transition">Experiencia</a>
+                <a href="#perfil" class="text-white/75 hover:text-[#4cd7f6] transition">Perfil</a>
             </div>
 
-            <a href="#contacto" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[#57dffe] text-[#001f26] font-bold text-sm hover:bg-[#4cd7f6] transition cta-button">
-                Conversemos
+            <a href="#diagnostico" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[#57dffe] text-[#001f26] font-bold text-sm hover:bg-[#4cd7f6] transition cta-button">
+                Analizar un proceso
             </a>
         </div>
 
-        <!-- Menú mobile con íconos -->
         <div class="lg:hidden border-t border-white/10 overflow-x-auto mobile-nav-scroll">
             <div class="flex items-center justify-between min-w-max gap-3 py-3">
-
-                <a href="#sobre-mi"
-                   class="mobile-nav-item text-[#4cd7f6]"
-                   aria-label="Sobre mí"
-                   title="Sobre mí">
-                    <span class="material-symbols-outlined">person_search</span>
-                </a>
-
-                <a href="#especialidades"
-                   class="mobile-nav-item text-[#4cd7f6]"
-                   aria-label="Especialidades"
-                   title="Especialidades">
-                    <span class="material-symbols-outlined">architecture</span>
-                </a>
-
-                <a href="#casos"
-                   class="mobile-nav-item text-[#4cd7f6]"
-                   aria-label="Casos de estudio"
-                   title="Productos">
-                    <span class="material-symbols-outlined">deployed_code</span>
-                </a>
-
-                <a href="#experiencia"
-                   class="mobile-nav-item text-[#4cd7f6]"
-                   aria-label="Experiencia"
-                   title="Experiencia">
-                    <span class="material-symbols-outlined">work_history</span>
-                </a>
-
-                <a href="#stack"
-                   class="mobile-nav-item text-[#4cd7f6]"
-                   aria-label="Stack técnico"
-                   title="Stack técnico">
-                    <span class="material-symbols-outlined">dns</span>
-                </a>
-
-                <a href="#contacto"
-                   class="mobile-nav-item text-[#4cd7f6]"
-                   aria-label="Contacto"
-                   title="Contacto">
-                    <span class="material-symbols-outlined">mail</span>
-                </a>
-
+                <a href="#problemas" class="mobile-nav-item text-[#4cd7f6]" aria-label="Problemas" title="Problemas"><span class="material-symbols-outlined">troubleshoot</span></a>
+                <a href="#servicios" class="mobile-nav-item text-[#4cd7f6]" aria-label="Servicios" title="Servicios"><span class="material-symbols-outlined">automation</span></a>
+                <a href="#proceso" class="mobile-nav-item text-[#4cd7f6]" aria-label="Cómo trabajo" title="Cómo trabajo"><span class="material-symbols-outlined">account_tree</span></a>
+                <a href="#casos" class="mobile-nav-item text-[#4cd7f6]" aria-label="Experiencia" title="Experiencia"><span class="material-symbols-outlined">deployed_code</span></a>
+                <a href="#perfil" class="mobile-nav-item text-[#4cd7f6]" aria-label="Perfil" title="Perfil"><span class="material-symbols-outlined">person</span></a>
+                <a href="#diagnostico" class="mobile-nav-item text-[#4cd7f6]" aria-label="Contacto" title="Contacto"><span class="material-symbols-outlined">mail</span></a>
             </div>
         </div>
     </nav>
@@ -160,42 +119,41 @@
 
         <div class="relative z-10 max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[1.15fr_.85fr] gap-16 items-center">
             <div class="text-white reveal reveal-left">
-                <p class="section-label text-[#4cd7f6] mb-5">Arquitectura · SaaS · APIs · Laravel</p>
+                <p class="section-label text-[#4cd7f6] mb-5">AUTOMATIZACIÓN · INTEGRACIONES · SOLUCIONES OPERATIVAS</p>
 
-                <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[1.05] mb-6">
-                    Gustavo <span class="text-[#4cd7f6] text-accent-glow">Cárdenas</span>
+                <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[1.03] mb-6 max-w-4xl">
+                    Elimina trabajo manual de tu <span class="text-[#4cd7f6] text-accent-glow">operación.</span>
                 </h1>
 
-                <h2 class="text-2xl md:text-3xl font-bold text-white/90 mb-6 max-w-3xl">
-                    Arquitecto de Software especializado en Laravel, plataformas SaaS e integraciones empresariales.
-                </h2>
-
-                <p class="text-lg md:text-xl leading-relaxed text-white/70 max-w-2xl">
-                    Diseño y construyo productos digitales, APIs y sistemas empresariales con foco en escalabilidad,
-                    trazabilidad, seguridad y mantenibilidad en producción.
+                <p class="text-xl md:text-2xl font-semibold leading-relaxed text-white/90 max-w-3xl mb-5">
+                    Automatizo procesos, conecto sistemas y construyo soluciones simples para tareas que hoy consumen horas de tu equipo.
                 </p>
 
+                <div class="border-l-2 border-[#4cd7f6] pl-5 py-2 max-w-3xl text-white/65 text-lg leading-relaxed">
+                    ¿Tu equipo copia datos, mantiene planillas, prepara informes o ingresa la misma información en distintos sistemas?
+                </div>
+
                 <div class="flex flex-wrap gap-4 mt-9">
-                    <a href="#casos" class="px-7 py-3 rounded-lg bg-[#57dffe] text-[#001f26] font-bold hover:bg-[#4cd7f6] transition shadow-lg cta-button">
-                        Ver últimos proyectos
+                    <a href="#diagnostico" class="px-7 py-3 rounded-lg bg-[#57dffe] text-[#001f26] font-bold hover:bg-[#4cd7f6] transition shadow-lg cta-button">
+                        Analizar un proceso
                     </a>
-                    <a href="#contacto" class="px-7 py-3 rounded-lg border border-[#4cd7f6] text-[#4cd7f6] font-bold hover:bg-[#4cd7f6]/10 transition cta-button">
-                        Contactar
+                    <a href="#servicios" class="px-7 py-3 rounded-lg border border-[#4cd7f6] text-[#4cd7f6] font-bold hover:bg-[#4cd7f6]/10 transition cta-button">
+                        Ver soluciones
                     </a>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-3xl">
                     <div class="glass-card rounded-xl p-5 hero-stat">
                         <div class="text-3xl font-black text-[#4cd7f6] counter" data-count="10" data-suffix="+">10+</div>
-                        <div class="text-sm text-white/65 mt-1">años de experiencia</div>
+                        <div class="text-sm text-white/65 mt-1">años resolviendo problemas técnicos</div>
                     </div>
                     <div class="glass-card rounded-xl p-5 hero-stat">
-                        <div class="text-3xl font-black text-[#4cd7f6] counter" data-count="13" data-suffix="+">13+</div>
-                        <div class="text-sm text-white/65 mt-1">clientes e instituciones</div>
+                        <div class="text-3xl font-black text-[#4cd7f6]">B2B</div>
+                        <div class="text-sm text-white/65 mt-1">procesos empresariales e integraciones</div>
                     </div>
                     <div class="glass-card rounded-xl p-5 hero-stat">
-                        <div class="text-3xl font-black text-[#4cd7f6] counter" data-count="3">3</div>
-                        <div class="text-sm text-white/65 mt-1">productos SaaS</div>
+                        <div class="text-3xl font-black text-[#4cd7f6]">Chile</div>
+                        <div class="text-sm text-white/65 mt-1">atención remota y proyectos acotados</div>
                     </div>
                 </div>
             </div>
@@ -204,484 +162,459 @@
                 <div class="relative w-72 h-72 md:w-96 md:h-96">
                     <div class="absolute inset-0 bg-secondary-fixed-dim/18 rounded-full blur-2xl"></div>
                     <div class="relative z-10 w-full h-full rounded-full border-4 border-[#4cd7f6]/30 overflow-hidden bg-inverse-surface-soft shadow-2xl hero-photo">
-                        <img
-                                src="assets/img/hero_img.png"
-                                alt="Gustavo Cárdenas"
-                                class="w-full h-full object-cover"
-                        />
+                        <img src="assets/img/hero_img.png" alt="Gustavo Cárdenas" class="w-full h-full object-cover" />
                     </div>
 
                     <div class="absolute -top-4 -right-4 w-14 h-14 glass-card rounded-xl flex items-center justify-center hero-icon">
-                        <span class="material-symbols-outlined text-[#4cd7f6]">architecture</span>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">automation</span>
                     </div>
                     <div class="absolute -bottom-4 -left-4 w-14 h-14 glass-card rounded-xl flex items-center justify-center hero-icon-alt">
-                        <span class="material-symbols-outlined text-[#4cd7f6]">terminal</span>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">hub</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre-mi" class="py-section-gap">
-        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[1fr_.85fr] gap-14 items-start">
-            <div class="reveal reveal-left">
-                <p class="section-label text-[#5b4663] mb-4">Sobre mí</p>
-                <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-7">
-                    Producto, arquitectura y ejecución técnica.
-                </h2>
-
-                <div class="space-y-5 text-on-surface-variant text-lg leading-relaxed">
-                    <p>
-                        Soy Arquitecto de Software especializado en Laravel, plataformas SaaS e integraciones empresariales.
-                    </p>
-                    <p>
-                        Disfruto participar en la creación de productos digitales completos, desde el diseño de la solución
-                        y la definición de la arquitectura hasta su desarrollo, despliegue y operación en producción.
-                    </p>
-                    <p>
-                        Mi enfoque combina visión de negocio, ingeniería de software y disciplina técnica para construir
-                        plataformas robustas, escalables y mantenibles en el tiempo.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
-                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">schema</span>
-                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">Arquitectura</h3>
-                    <p class="text-on-surface-variant">Diseño de sistemas escalables, mantenibles y preparados para crecer.</p>
-                </div>
-                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
-                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">hub</span>
-                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">Integraciones</h3>
-                    <p class="text-on-surface-variant">APIs, servicios externos, automatización y comunicación entre plataformas.</p>
-                </div>
-                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
-                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">deployed_code</span>
-                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">SaaS</h3>
-                    <p class="text-on-surface-variant">Productos multiempresa con foco en operación, seguridad y trazabilidad.</p>
-                </div>
-                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
-                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">groups</span>
-                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">Liderazgo técnico</h3>
-                    <p class="text-on-surface-variant">Coordinación entre negocio, tecnología, equipos internos y proveedores.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="especialidades" class="py-section-gap bg-surface-container-low">
+    <section id="problemas" class="py-section-gap">
         <div class="max-w-container-max mx-auto px-gutter">
             <div class="max-w-3xl mb-12 reveal">
-                <p class="section-label text-[#5b4663] mb-4">Especialidades</p>
+                <p class="section-label text-[#5b4663] mb-4">Problemas que vale la pena eliminar</p>
                 <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-5">
-                    Servicios de alto impacto técnico.
+                    ¿Dónde está perdiendo horas tu empresa?
                 </h2>
                 <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Apoyo a empresas que necesitan ordenar, escalar o modernizar sus plataformas digitales sin perder control técnico ni visión de negocio.
+                    No parto proponiendo una plataforma nueva. Primero identifico una tarea concreta que consume tiempo, genera errores o depende demasiado de una persona.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
-                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">architecture</span>
-                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Arquitectura de Software</h3>
-                    <p class="text-on-surface-variant leading-relaxed">Diseño de soluciones, separación de responsabilidades, servicios, trazabilidad, seguridad y mantenibilidad.</p>
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">content_copy</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Copiar datos entre sistemas</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Alguien descarga, modifica y vuelve a ingresar información porque dos plataformas no conversan entre sí.</p>
                 </article>
 
                 <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
-                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">api</span>
-                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">APIs e Integraciones</h3>
-                    <p class="text-on-surface-variant leading-relaxed">Diseño e implementación de APIs REST, integración con servicios externos y automatización de procesos críticos.</p>
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">table_view</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Excel convertido en sistema</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Planillas críticas, versiones duplicadas y procesos que solo funcionan mientras una persona los mantenga.</p>
                 </article>
 
                 <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
-                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">cloud_done</span>
-                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Plataformas SaaS</h3>
-                    <p class="text-on-surface-variant leading-relaxed">Construcción de productos multiempresa orientados a operación real, escalabilidad y evolución continua.</p>
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">repeat</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Tareas repetitivas</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Informes, documentos, correos, cargas, conciliaciones o seguimientos que se repiten todos los días.</p>
                 </article>
 
                 <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
-                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">code_blocks</span>
-                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Desarrollo Laravel</h3>
-                    <p class="text-on-surface-variant leading-relaxed">Aplicaciones backend, paneles administrativos, servicios, jobs, eventos, reportes y flujos de negocio.</p>
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">inbox</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Información que llega desordenada</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Datos recibidos por correo, formularios o mensajería que luego alguien debe ordenar y registrar manualmente.</p>
                 </article>
 
                 <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
-                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">query_stats</span>
-                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Auditoría y modernización</h3>
-                    <p class="text-on-surface-variant leading-relaxed">Revisión de deuda técnica, rendimiento, estructura, base de datos, seguridad y capacidad de crecimiento.</p>
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">notification_important</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Procesos que dependen de memoria</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Recordatorios, vencimientos, aprobaciones y seguimientos que fallan cuando alguien no recuerda ejecutarlos.</p>
                 </article>
 
                 <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
-                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">assignment_turned_in</span>
-                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Liderazgo técnico</h3>
-                    <p class="text-on-surface-variant leading-relaxed">Traducción de requerimientos de negocio a historias, planificación, control técnico y validación funcional.</p>
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-5">hub</span>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Sistemas desconectados</h3>
+                    <p class="text-on-surface-variant leading-relaxed">ERP, CRM, sistemas internos y plataformas externas que contienen datos útiles pero funcionan como islas.</p>
                 </article>
+            </div>
+
+            <div class="mt-10 bg-[#5b4663] rounded-2xl p-7 md:p-9 text-white flex flex-col lg:flex-row gap-6 justify-between items-start lg:items-center reveal">
+                <div>
+                    <p class="font-black text-xl mb-2">La pregunta es simple:</p>
+                    <p class="text-white/75 text-lg">¿Qué tarea repite tu equipo varias veces por semana y desearías que dejara de hacer manualmente?</p>
+                </div>
+                <a href="#diagnostico" class="shrink-0 px-7 py-3 rounded-lg bg-[#57dffe] text-[#001f26] font-black hover:bg-[#4cd7f6] transition cta-button">
+                    Muéstrame el proceso
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-section-gap bg-inverse-surface text-white">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <div class="max-w-3xl mb-12 reveal">
+                <p class="section-label text-[#4cd7f6] mb-4">Servicios con alcance claro</p>
+                <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-5">
+                    Partimos pequeño. Resolvemos algo concreto.
+                </h2>
+                <p class="text-lg text-white/70 leading-relaxed">
+                    Un proceso, un resultado y un alcance definido. Si el problema requiere más, se transforma en un proyecto independiente.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                <article class="glass-card rounded-2xl p-7 dark-card reveal reveal-scale">
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div>
+                            <p class="text-[#4cd7f6] font-bold text-xs tracking-[.18em] mb-2">PUNTO DE ENTRADA</p>
+                            <h3 class="text-2xl font-black">Diagnóstico de Fricción Operativa</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">troubleshoot</span>
+                    </div>
+                    <p class="text-white/70 leading-relaxed mb-6">Revisamos un proceso y detectamos dónde se pierden horas, se duplican tareas o se desaprovechan sistemas existentes.</p>
+                    <ul class="space-y-3 text-white/70 mb-7">
+                        <li>• Levantamiento de 1 proceso.</li>
+                        <li>• Flujo actual y puntos de fricción.</li>
+                        <li>• Horas y tareas involucradas.</li>
+                        <li>• Propuesta concreta de mejora.</li>
+                        <li>• Costo de implementación.</li>
+                    </ul>
+                    <div class="border-t border-white/10 pt-5">
+                        <div class="text-2xl font-black text-[#4cd7f6]">$69.900 <span class="text-sm font-medium text-white/50">+ IVA</span></div>
+                        <p class="text-xs text-white/45 mt-2">Se descuenta de la implementación si contratas dentro de 7 días.</p>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-2xl p-7 dark-card service-featured reveal reveal-scale">
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div>
+                            <p class="text-[#4cd7f6] font-bold text-xs tracking-[.18em] mb-2">OFERTA PRINCIPAL</p>
+                            <h3 class="text-2xl font-black">Automatización Express</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">automation</span>
+                    </div>
+                    <p class="text-white/70 leading-relaxed mb-6">Tomamos una tarea administrativa repetitiva y reducimos al mínimo la intervención manual necesaria para ejecutarla.</p>
+                    <ul class="space-y-3 text-white/70 mb-7">
+                        <li>• 1 proceso definido.</li>
+                        <li>• Máximo 2 sistemas o herramientas.</li>
+                        <li>• Configuración o desarrollo incluido.</li>
+                        <li>• Pruebas y puesta en producción.</li>
+                        <li>• 7 días de ajustes posteriores.</li>
+                    </ul>
+                    <div class="border-t border-white/10 pt-5">
+                        <div class="text-2xl font-black text-[#4cd7f6]">$299.900 <span class="text-sm font-medium text-white/50">+ IVA</span></div>
+                        <p class="text-xs text-white/45 mt-2">Informes, documentos, cargas, correos, formularios y tareas repetitivas.</p>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-2xl p-7 dark-card reveal reveal-scale">
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div>
+                            <p class="text-[#4cd7f6] font-bold text-xs tracking-[.18em] mb-2">MAYOR IMPACTO</p>
+                            <h3 class="text-2xl font-black">Conecta 2 Sistemas</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">hub</span>
+                    </div>
+                    <p class="text-white/70 leading-relaxed mb-6">Si tu equipo saca información de una plataforma para ingresarla manualmente en otra, diseñamos la integración.</p>
+                    <ul class="space-y-3 text-white/70 mb-7">
+                        <li>• Análisis del flujo actual.</li>
+                        <li>• Integración entre 2 sistemas.</li>
+                        <li>• Mapeo de datos principal.</li>
+                        <li>• Logs y manejo de errores.</li>
+                        <li>• Pruebas, producción y documentación.</li>
+                    </ul>
+                    <div class="border-t border-white/10 pt-5">
+                        <div class="text-2xl font-black text-[#4cd7f6]">Desde $499.900 <span class="text-sm font-medium text-white/50">+ IVA</span></div>
+                        <p class="text-xs text-white/45 mt-2">Precio base cuando existen APIs o mecanismos de integración disponibles.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="ejemplos" class="py-section-gap">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <div class="max-w-3xl mb-12 reveal">
+                <p class="section-label text-[#5b4663] mb-4">Antes / Después</p>
+                <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-5">
+                    La tecnología importa menos que el trabajo que desaparece.
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+                <article class="bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm reveal reveal-left">
+                    <p class="text-xs font-black tracking-[.18em] text-[#5b4663] mb-5">ANTES</p>
+                    <div class="flex flex-wrap items-center gap-3 font-bold text-sm mb-5">
+                        <span class="bg-surface-container-low px-4 py-2 rounded-lg">Correo</span>
+                        <span class="material-symbols-outlined text-[#5b4663]">arrow_forward</span>
+                        <span class="bg-surface-container-low px-4 py-2 rounded-lg">Excel</span>
+                        <span class="material-symbols-outlined text-[#5b4663]">arrow_forward</span>
+                        <span class="bg-surface-container-low px-4 py-2 rounded-lg">Persona</span>
+                        <span class="material-symbols-outlined text-[#5b4663]">arrow_forward</span>
+                        <span class="bg-surface-container-low px-4 py-2 rounded-lg">Sistema</span>
+                    </div>
+                    <p class="text-on-surface-variant leading-relaxed">Alguien recibe información, la ordena, copia datos y vuelve a cargarlos manualmente.</p>
+                </article>
+
+                <article class="bg-[#5b4663] rounded-2xl p-7 text-white reveal reveal-right">
+                    <p class="text-xs font-black tracking-[.18em] text-[#4cd7f6] mb-5">DESPUÉS</p>
+                    <div class="flex flex-wrap items-center gap-3 font-bold text-sm mb-5">
+                        <span class="bg-white/10 px-4 py-2 rounded-lg">Entrada</span>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">arrow_forward</span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg">Validación</span>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">arrow_forward</span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg">Automatización</span>
+                        <span class="material-symbols-outlined text-[#4cd7f6]">arrow_forward</span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg">Resultado</span>
+                    </div>
+                    <p class="text-white/75 leading-relaxed">El flujo ocurre automáticamente y la persona interviene solo cuando aparece una excepción real.</p>
+                </article>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale flex gap-4">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl">monitoring</span>
+                    <div><h3 class="font-black text-[#5b4663] mb-1">Informes recurrentes</h3><p class="text-on-surface-variant">Datos dispersos → consolidación → informe → envío automático.</p></div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale flex gap-4">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl">description</span>
+                    <div><h3 class="font-black text-[#5b4663] mb-1">Documentos repetitivos</h3><p class="text-on-surface-variant">Datos de entrada → generación → almacenamiento → notificación.</p></div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale flex gap-4">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl">sync</span>
+                    <div><h3 class="font-black text-[#5b4663] mb-1">Doble digitación</h3><p class="text-on-surface-variant">Sistema A → validación → Sistema B, sin copiar información manualmente.</p></div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale flex gap-4">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl">notifications_active</span>
+                    <div><h3 class="font-black text-[#5b4663] mb-1">Seguimientos</h3><p class="text-on-surface-variant">Fecha o evento → regla → aviso → registro de la acción.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proceso" class="py-section-gap bg-surface-container-low">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <div class="max-w-3xl mb-12 reveal">
+                <p class="section-label text-[#5b4663] mb-4">Cómo trabajo</p>
+                <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-5">
+                    Menos reuniones. Más evidencia.
+                </h2>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                    Si puedes mostrarme el proceso, puedo entender rápidamente dónde está la fricción y qué vale la pena cambiar.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 process-line">
+                <article class="relative z-10 bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <div class="w-14 h-14 rounded-full bg-[#5b4663] text-white flex items-center justify-center font-black text-xl mb-5">1</div>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Muéstrame</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Describe la tarea o envía un video corto mostrando cómo la realizan actualmente.</p>
+                </article>
+                <article class="relative z-10 bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <div class="w-14 h-14 rounded-full bg-[#5b4663] text-white flex items-center justify-center font-black text-xl mb-5">2</div>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Analizo</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Identifico pasos innecesarios, restricciones, sistemas involucrados y posibilidades reales.</p>
+                </article>
+                <article class="relative z-10 bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <div class="w-14 h-14 rounded-full bg-[#5b4663] text-white flex items-center justify-center font-black text-xl mb-5">3</div>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Propongo</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Recibes alcance, resultado esperado, precio y condiciones antes de comenzar.</p>
+                </article>
+                <article class="relative z-10 bg-white rounded-2xl p-7 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
+                    <div class="w-14 h-14 rounded-full bg-[#5b4663] text-white flex items-center justify-center font-black text-xl mb-5">4</div>
+                    <h3 class="text-xl text-[#5b4663] font-extrabold mb-3">Implemento</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Construyo, pruebo y dejo la solución funcionando dentro del alcance acordado.</p>
+                </article>
+            </div>
+
+            <div class="mt-8 border border-[#5b4663]/20 rounded-2xl p-6 bg-white flex gap-4 items-start reveal">
+                <span class="material-symbols-outlined text-[#5b4663] text-3xl">videocam</span>
+                <div>
+                    <p class="font-black text-[#5b4663] mb-1">Una buena forma de comenzar</p>
+                    <p class="text-on-surface-variant">Graba 2–5 minutos de pantalla mostrando la tarea que quieres simplificar. No necesitas preparar una presentación.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="casos" class="py-section-gap bg-inverse-surface text-white">
         <div class="max-w-container-max mx-auto px-gutter">
-            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 reveal">
-                <div>
-                    <p class="section-label text-[#4cd7f6] mb-4">Mis productos</p>
-                    <h2 class="text-4xl md:text-5xl font-black tracking-tight">
-                        Productos y soluciones reales.
-                    </h2>
-                </div>
-                <p class="text-white/60 text-lg max-w-xl">
-                    Selección de plataformas donde he participado desde arquitectura, desarrollo, integración, operación o liderazgo técnico.
+            <div class="max-w-3xl mb-12 reveal">
+                <p class="section-label text-[#4cd7f6] mb-4">Experiencia aplicada</p>
+                <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-5">
+                    Diagnóstico y ejecución técnica en la misma persona.
+                </h2>
+                <p class="text-lg text-white/70 leading-relaxed">
+                    La propuesta no termina en una recomendación. Puedo diseñar e implementar la solución cuando el caso lo requiere.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
                 <article class="glass-card rounded-2xl p-7 dark-card reveal reveal-scale">
                     <div class="flex items-start justify-between gap-4 mb-5">
                         <div>
-                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">SaaS · Certificación Digital</p>
+                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">AUTOMATIZACIÓN DOCUMENTAL</p>
                             <h3 class="text-2xl font-black">Audicert</h3>
                         </div>
                         <span class="material-symbols-outlined text-[#4cd7f6]">verified</span>
-
                     </div>
-                    <p class="text-white/80 font-bold text-sm mb-4">
-                        Rol: Cofundador, CTO, arquitectura SaaS, backend Laravel y operación técnica.
-                    </p>
-                    <p class="text-white/70 leading-relaxed mb-5">
-                        Plataforma SaaS para emisión masiva de certificados digitales, validación pública mediante QR,
-                        gestión documental y trazabilidad completa para OTEC e instituciones.
-                    </p>
-                    <ul class="space-y-2 text-white/70 mb-6">
-                        <li>• Arquitectura multiinstitución.</li>
-                        <li>• Generación de PDF y plantillas dinámicas.</li>
-                        <li>• Validación pública y trazabilidad operacional.</li>
-                    </ul>
+                    <p class="text-white/70 leading-relaxed mb-5">Flujos de certificados, validación, trazabilidad, generación de documentos e integración de servicios para procesos administrativos.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Laravel</span>
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">MySQL</span>
                         <span class="px-3 py-1 rounded-full bg-white/10 text-sm">APIs</span>
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">QR/PDF</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Documentos</span>
                     </div>
-                    <a href="#contacto" class="inline-flex items-center gap-2 text-[#4cd7f6] font-bold text-sm mt-5 hover:gap-3 transition-all">
-                        Conversar sobre un proyecto similar
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
                 </article>
 
                 <article class="glass-card rounded-2xl p-7 dark-card reveal reveal-scale">
                     <div class="flex items-start justify-between gap-4 mb-5">
                         <div>
-                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">SaaS · Activos y Documentos</p>
+                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">OPERACIÓN Y TRAZABILIDAD</p>
                             <h3 class="text-2xl font-black">EnlacePro</h3>
                         </div>
                         <span class="material-symbols-outlined text-[#4cd7f6]">inventory_2</span>
                     </div>
-                    <p class="text-white/80 font-bold text-sm mb-4">
-                        Rol: Fundador, arquitectura de producto, diseño funcional y desarrollo completo.
-                    </p>
-                    <p class="text-white/70 leading-relaxed mb-5">
-                        Plataforma para conectar activos, documentos y personas en un único sistema, reduciendo pérdidas de información,
-                        vencimientos, incumplimientos y desorden operativo.
-                    </p>
-                    <ul class="space-y-2 text-white/70 mb-6">
-                        <li>• Gestión de activos, documentos y responsables.</li>
-                        <li>• Alertas de vencimiento e historial trazable.</li>
-                        <li>• Producto en validación con clientes piloto.</li>
-                    </ul>
+                    <p class="text-white/70 leading-relaxed mb-5">Gestión de activos, responsables, vencimientos, documentos y acceso mediante QR para transformar información dispersa en un flujo controlable.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Laravel</span>
                         <span class="px-3 py-1 rounded-full bg-white/10 text-sm">SaaS</span>
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Multiempresa</span>
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Trazabilidad</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">QR</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Alertas</span>
                     </div>
-                    <a href="#contacto" class="inline-flex items-center gap-2 text-[#4cd7f6] font-bold text-sm mt-5 hover:gap-3 transition-all">
-                        Conversar sobre un proyecto similar
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
                 </article>
 
                 <article class="glass-card rounded-2xl p-7 dark-card reveal reveal-scale">
                     <div class="flex items-start justify-between gap-4 mb-5">
                         <div>
-                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">Microservicio · Mensajería</p>
-                            <h3 class="text-2xl font-black">Sender</h3>
-                        </div>
-                        <span class="material-symbols-outlined text-[#4cd7f6]">outgoing_mail</span>
-                    </div>
-                    <p class="text-white/80 font-bold text-sm mb-4">
-                        Rol: Diseño del servicio, API REST y desacoplamiento del ecosistema.
-                    </p>
-                    <p class="text-white/70 leading-relaxed mb-5">
-                        Servicio desacoplado para centralizar envío de correos transaccionales y comunicaciones del ecosistema,
-                        reduciendo dependencia entre aplicaciones.
-                    </p>
-                    <ul class="space-y-2 text-white/70 mb-6">
-                        <li>• API REST para envío transaccional.</li>
-                        <li>• Separación de responsabilidades entre productos.</li>
-                        <li>• Base para comunicaciones escalables.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Laravel</span>
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">API REST</span>
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Mensajería</span>
-                    </div>
-                    <a href="#contacto" class="inline-flex items-center gap-2 text-[#4cd7f6] font-bold text-sm mt-5 hover:gap-3 transition-all">
-                        Conversar sobre un proyecto similar
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
-                </article>
-
-                <article class="glass-card rounded-2xl p-7 dark-card reveal reveal-scale">
-                    <div class="flex items-start justify-between gap-4 mb-5">
-                        <div>
-                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">GPS · Integración · Eventos</p>
+                            <p class="text-[#4cd7f6] font-bold text-sm mb-2">INTEGRACIÓN Y EVENTOS</p>
                             <h3 class="text-2xl font-black">ISI-Track</h3>
                         </div>
                         <span class="material-symbols-outlined text-[#4cd7f6]">map</span>
                     </div>
-                    <p class="text-white/80 font-bold text-sm mb-4">
-                        Rol: Ingeniería backend, integración Traccar y normalización de eventos GPS.
-                    </p>
-                    <p class="text-white/70 leading-relaxed mb-5">
-                        Suite basada en Traccar para gestionar eventos GPS de forma estandarizada, independiente del modelo,
-                        fabricante o protocolo de comunicación del dispositivo.
-                    </p>
-                    <ul class="space-y-2 text-white/70 mb-6">
-                        <li>• Capa de abstracción para eventos de distintos dispositivos.</li>
-                        <li>• Visualización de flotas, alertas y reportes.</li>
-                        <li>• Integración directa con API de Traccar.</li>
-                    </ul>
+                    <p class="text-white/70 leading-relaxed mb-5">Integración de Traccar y normalización de eventos GPS para trabajar con distintos dispositivos y protocolos bajo una capa común.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Laravel</span>
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">MySQL</span>
-                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Traccar API</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">APIs</span>
                         <span class="px-3 py-1 rounded-full bg-white/10 text-sm">GPS</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Integración</span>
                     </div>
-                    <a href="#contacto" class="inline-flex items-center gap-2 text-[#4cd7f6] font-bold text-sm mt-5 hover:gap-3 transition-all">
-                        Conversar sobre un proyecto similar
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
                 </article>
             </div>
         </div>
     </section>
 
-    <section id="experiencia" class="py-section-gap">
-        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[.75fr_1.25fr] gap-14">
+    <section id="perfil" class="py-section-gap">
+        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[1fr_.9fr] gap-14 items-start">
             <div class="reveal reveal-left">
-                <p class="section-label text-[#5b4663] mb-4">Experiencia</p>
-                <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-5">
-                    Trayectoria orientada a resultados.
+                <p class="section-label text-[#5b4663] mb-4">Perfil profesional</p>
+                <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-7">
+                    Arquitectura y desarrollo puestos al servicio del problema.
                 </h2>
-                <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Experiencia combinando arquitectura, desarrollo, coordinación de equipos e integración entre negocio y tecnología.
-                </p>
-            </div>
 
-            <div class="timeline-line pl-10 space-y-10 reveal reveal-right">
-
-                <article class="relative">
-                    <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-[#5b4663] border-4 border-white timeline-dot"></div>
-
-                    <h3 class="text-xl text-[#5b4663] font-black">
-                        Fundador y Arquitecto de Producto
-                    </h3>
-
-                    <p class="text-[#5b4663] font-bold mt-1">
-                        EnlacePro · Enero 2026 - Actualidad
-                    </p>
-
-                    <p class="text-on-surface-variant mt-3 leading-relaxed">
-                        Responsable de producto, arquitectura, desarrollo y estrategia de una plataforma SaaS para gestión de activos,
-                        documentos, responsables, alertas y trazabilidad operacional.
-                    </p>
-                </article>
-
-                <article class="relative">
-                    <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-[#5b4663] border-4 border-white timeline-dot"></div>
-
-                    <h3 class="text-xl text-[#5b4663] font-black">
-                        Cofundador y Director de Tecnología (CTO)
-                    </h3>
-
-                    <p class="text-[#5b4663] font-bold mt-1">
-                        Audicert · Septiembre 2025 - Actualidad
-                    </p>
-
-                    <p class="text-on-surface-variant mt-3 leading-relaxed">
-                        Lidero la estrategia tecnológica, arquitectura y desarrollo de una plataforma SaaS para certificación digital,
-                        validación pública, gestión documental y trazabilidad de procesos.
-                    </p>
-                </article>
-
-                <article class="relative">
-                    <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-[#5b4663] border-4 border-white timeline-dot"></div>
-
-                    <h3 class="text-xl text-[#5b4663] font-black">
-                        Ingeniero de Software
-                    </h3>
-
-                    <p class="text-[#5b4663] font-bold mt-1">
-                        Dimagex · Enero 2025 - Noviembre 2025
-                    </p>
-
-                    <p class="text-on-surface-variant mt-3 leading-relaxed">
-                        Desarrollo de soluciones de integración, automatización y gestión de información en tiempo real,
-                        incluyendo ISI-Track y soluciones conectadas a Dentalink.
-                    </p>
-                </article>
-
-                <article class="relative">
-                    <div class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-[#5b4663] border-4 border-white timeline-dot"></div>
-
-                    <h3 class="text-xl text-[#5b4663] font-black">
-                        Business Partner TIC
-                    </h3>
-
-                    <p class="text-[#5b4663] font-bold mt-1">
-                        Abastible / Kibernum · Septiembre 2023 - Noviembre 2024
-                    </p>
-
-                    <p class="text-on-surface-variant mt-3 leading-relaxed">
-                        Coordinación entre marketing digital, negocio, TI, proveedores y equipos internos. Traducción de requerimientos
-                        a historias de usuario, planificación, control y validación de entregables.
-                    </p>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="stack" class="py-section-gap bg-surface-container-low">
-        <div class="max-w-container-max mx-auto px-gutter">
-            <div class="max-w-3xl mb-12 reveal">
-                <p class="section-label text-[#5b4663] mb-4">Stack técnico</p>
-                <h2 class="text-4xl text-[#5b4663] md:text-5xl font-black tracking-tight mb-5">
-                    Herramientas principales.
-                </h2>
-                <p class="text-lg text-on-surface-variant leading-relaxed">
-                    Tecnologías que uso para construir sistemas backend, APIs, plataformas SaaS e integraciones empresariales.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
-                    <h3 class="font-black text-[#5b4663] text-lg mb-4 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[#5b4663]">dns</span>
-                        Backend
-                    </h3>
-
-                    <ul class="space-y-3 text-on-surface-variant">
-                        <li>PHP / Laravel</li>
-                        <li>.NET / C#</li>
-                        <li>JavaScript / Node.js</li>
-                    </ul>
+                <div class="space-y-5 text-on-surface-variant text-lg leading-relaxed">
+                    <p>Soy Gustavo Cárdenas, desarrollador y arquitecto de soluciones con más de 10 años de experiencia en backend, APIs, integraciones y plataformas empresariales.</p>
+                    <p>Mi trabajo se concentra en entender operaciones complejas, simplificar flujos y utilizar la tecnología necesaria para resolver el problema sin agregar complejidad innecesaria.</p>
+                    <p>He trabajado en logística, transporte, salud, veterinaria, banca y productos SaaS, combinando diseño de solución, desarrollo e implementación.</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
-                    <h3 class="font-black text-[#5b4663] text-lg mb-4 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[#5b4663]">database</span> Datos
-                    </h3>
-                    <ul class="space-y-3 text-on-surface-variant">
-                        <li>MySQL</li>
-                        <li>PostgreSQL</li>
-                        <li>SQL Server</li>
-                        <li>Modelado relacional</li>
-                    </ul>
+                <div class="flex flex-wrap gap-3 mt-8">
+                    <a href="https://www.linkedin.com/in/gustavo-cardenas-cl/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-lg border border-[#5b4663] text-[#5b4663] font-bold hover:bg-[#5b4663]/5 transition">LinkedIn</a>
+                    <a href="https://github.com/GusCardenas" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-lg border border-[#5b4663] text-[#5b4663] font-bold hover:bg-[#5b4663]/5 transition">GitHub</a>
                 </div>
+            </div>
 
-                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
-                    <h3 class="font-black text-[#5b4663] text-lg mb-4 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[#5b4663]">api</span> Integración
-                    </h3>
-                    <ul class="space-y-3 text-on-surface-variant">
-                        <li>APIs REST</li>
-                        <li>Servicios externos</li>
-                        <li>Automatización de procesos</li>
-                        <li>Mensajería transaccional</li>
-                    </ul>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">api</span>
+                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">Integraciones</h3>
+                    <p class="text-on-surface-variant">APIs REST, servicios externos, ERP, CRM y plataformas empresariales.</p>
                 </div>
-
-                <div class="bg-white rounded-2xl p-6 border border-outline-variant/40 shadow-sm motion-card reveal reveal-scale">
-                    <h3 class="font-black text-[#5b4663] text-lg mb-4 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[#5b4663]">account_tree</span> Arquitectura
-                    </h3>
-                    <ul class="space-y-3 text-on-surface-variant">
-                        <li>SaaS multiempresa</li>
-                        <li>Diseño de sistemas</li>
-                        <li>Trazabilidad y auditoría</li>
-                        <li>Seguridad y mantenibilidad</li>
-                    </ul>
+                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">automation</span>
+                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">Automatización</h3>
+                    <p class="text-on-surface-variant">Procesos administrativos, documentos, reportes, eventos y tareas repetitivas.</p>
+                </div>
+                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">dns</span>
+                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">Backend</h3>
+                    <p class="text-on-surface-variant">PHP / Laravel, .NET / C#, JavaScript / Node.js y bases de datos relacionales.</p>
+                </div>
+                <div class="bg-white border border-outline-variant/40 rounded-2xl p-6 shadow-sm motion-card reveal reveal-scale">
+                    <span class="material-symbols-outlined text-[#5b4663] text-3xl mb-4">schema</span>
+                    <h3 class="font-extrabold text-lg mb-2 text-[#5b4663]">Arquitectura</h3>
+                    <p class="text-on-surface-variant">Diseño de sistemas simples, trazables, mantenibles y preparados para crecer.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="py-section-gap bg-inverse-surface text-white">
-        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[.9fr_1.1fr] gap-14 items-start">
+    <section id="diagnostico" class="py-section-gap bg-inverse-surface text-white">
+        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[.85fr_1.15fr] gap-14 items-start">
             <div class="reveal reveal-left">
-                <p class="section-label text-[#4cd7f6] mb-4">Contacto</p>
+                <p class="section-label text-[#4cd7f6] mb-4">Muéstrame el proceso</p>
                 <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-6">
-                    ¿Necesitas diseñar, ordenar o escalar una plataforma?
+                    Cuéntame qué tarea quieres dejar de hacer manualmente.
                 </h2>
                 <p class="text-lg text-white/70 leading-relaxed mb-8">
-                    Puedo ayudarte a diseñar, ordenar o escalar plataformas Laravel, APIs e integraciones empresariales.
-                    También estoy abierto a oportunidades de liderazgo técnico o arquitectura de software.
+                    No necesitas saber qué tecnología usar. Describe cómo funciona el proceso hoy y qué debería ocurrir idealmente. Con eso puedo determinar si conviene automatizar, integrar o construir una herramienta pequeña.
                 </p>
 
+                <div class="space-y-4 text-white/80 mb-8">
+                    <div class="flex items-start gap-4"><span class="material-symbols-outlined text-[#4cd7f6]">check_circle</span><span>Sin obligación de cambiar tus sistemas actuales.</span></div>
+                    <div class="flex items-start gap-4"><span class="material-symbols-outlined text-[#4cd7f6]">check_circle</span><span>Partimos por un problema concreto, no por una plataforma completa.</span></div>
+                    <div class="flex items-start gap-4"><span class="material-symbols-outlined text-[#4cd7f6]">check_circle</span><span>Puedes incluir un enlace a un video corto mostrando el proceso.</span></div>
+                </div>
+
                 <div class="space-y-4 text-white/80">
-                    <div class="flex items-center gap-4">
-                        <span class="material-symbols-outlined text-[#4cd7f6]">mail</span>
-                        <span>
-                            <a href="mailto:hola@gcardenas.cl">hola@gcardenas.cl</a>
-                        </span>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <span class="material-symbols-outlined text-[#4cd7f6]">location_on</span>
-                        <span>Chile · Remoto</span>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <span class="material-symbols-outlined text-[#4cd7f6]">link</span>
-                        <span>
-                            <a href="https://www.linkedin.com/in/gustavo-cardenas-cl/" target="_blank" >linkedin</a>
-                        </span>
-                    </div>
+                    <div class="flex items-center gap-4"><span class="material-symbols-outlined text-[#4cd7f6]">mail</span><a href="mailto:hola@gcardenas.cl">hola@gcardenas.cl</a></div>
+                    <div class="flex items-center gap-4"><span class="material-symbols-outlined text-[#4cd7f6]">location_on</span><span>Chile · Remoto</span></div>
                 </div>
             </div>
 
             <form class="glass-card rounded-2xl p-7 space-y-5 reveal reveal-right" id="contact-form">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-bold text-white/70 mb-2">Nombre</label>
-                        <input class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Tu nombre" type="text" required>
+                        <label for="name" class="block text-sm font-bold text-white/70 mb-2">Nombre *</label>
+                        <input id="name" name="name" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Tu nombre" type="text" required>
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-white/70 mb-2">Correo</label>
-                        <input class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="tu@email.com" type="email" required>
+                        <label for="email" class="block text-sm font-bold text-white/70 mb-2">Correo *</label>
+                        <input id="email" name="email" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="tu@empresa.cl" type="email" required>
+                    </div>
+                    <div>
+                        <label for="company" class="block text-sm font-bold text-white/70 mb-2">Empresa</label>
+                        <input id="company" name="company" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Nombre de la empresa" type="text">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-bold text-white/70 mb-2">Teléfono</label>
+                        <input id="phone" name="phone" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="+56 9..." type="text">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-white/70 mb-2">Tipo de necesidad</label>
-                    <select class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#4cd7f6]">
-                        <option class="text-on-surface">Arquitectura de software</option>
-                        <option class="text-on-surface">Desarrollo Software</option>
-                        <option class="text-on-surface">APIs e integraciones</option>
-                        <option class="text-on-surface">Consultoría técnica</option>
-                    </select>
+                    <label for="process" class="block text-sm font-bold text-white/70 mb-2">¿Qué tarea o proceso quieres mejorar? *</label>
+                    <textarea id="process" name="process" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Describe qué hace hoy tu equipo..." rows="4" required></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="frequency" class="block text-sm font-bold text-white/70 mb-2">¿Con qué frecuencia ocurre?</label>
+                        <input id="frequency" name="frequency" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Ej: todos los días" type="text">
+                    </div>
+                    <div>
+                        <label for="time_spent" class="block text-sm font-bold text-white/70 mb-2">¿Cuánto tiempo consume?</label>
+                        <input id="time_spent" name="time_spent" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Ej: 2 horas diarias" type="text">
+                    </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-white/70 mb-2">Mensaje</label>
-                    <textarea class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Cuéntame brevemente el contexto, objetivo o problema técnico." rows="5" required></textarea>
+                    <label for="systems" class="block text-sm font-bold text-white/70 mb-2">¿Qué sistemas o herramientas intervienen?</label>
+                    <input id="systems" name="systems" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Excel, ERP, CRM, correo, WhatsApp..." type="text">
+                </div>
+
+                <div>
+                    <label for="desired_result" class="block text-sm font-bold text-white/70 mb-2">¿Qué debería ocurrir automáticamente?</label>
+                    <textarea id="desired_result" name="desired_result" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Describe el resultado ideal..." rows="3"></textarea>
+                </div>
+
+                <div>
+                    <label for="video_url" class="block text-sm font-bold text-white/70 mb-2">Enlace a video del proceso <span class="font-normal text-white/40">(opcional)</span></label>
+                    <input id="video_url" name="video_url" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-[#4cd7f6]" placeholder="Loom, Drive, YouTube no listado..." type="url">
                 </div>
 
                 <button class="w-full bg-[#57dffe] text-[#001f26] py-4 rounded-lg font-black hover:bg-[#4cd7f6] transition active:scale-[0.98] cta-button" type="submit">
-                    Enviar mensaje
+                    Preparar correo con el diagnóstico
                 </button>
 
+                <p class="text-xs text-white/40 leading-relaxed">
+                    El formulario preparará un correo dirigido a hola@gcardenas.cl con la información ingresada. Podrás revisarlo antes de enviarlo.
+                </p>
             </form>
         </div>
     </section>
@@ -691,82 +624,130 @@
 <footer class="bg-inverse-surface border-t border-white/10">
     <div class="max-w-container-max mx-auto px-gutter py-8 flex flex-col md:flex-row justify-between items-center gap-5">
         <div class="font-black text-white text-xl">
-            <img src="assets/img/isotipo-white.png" alt="gcardenas.cl" style="height: 40px;">
+            <img src="assets/img/isotipo-white.png" alt="gcardenas.cl" style="height:40px;">
         </div>
-        <p class="text-white/45 text-sm">© 2026 Gustavo Cárdenas. Todos los derechos reservados.</p>
+        <p class="text-white/45 text-sm">© 2026 Gustavo Cárdenas. Automatización, integraciones y soluciones operativas.</p>
         <div class="flex gap-6 text-sm">
-            <a href="https://www.linkedin.com/in/gustavo-cardenas-cl" target="_blank" class="text-white/60 hover:text-[#4cd7f6] transition">LinkedIn</a>
-            <a href="https://github.com/GusCardenas" class="text-white/60 hover:text-[#4cd7f6] transition">GitHub</a>
+            <a href="https://www.linkedin.com/in/gustavo-cardenas-cl" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-[#4cd7f6] transition">LinkedIn</a>
+            <a href="https://github.com/GusCardenas" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-[#4cd7f6] transition">GitHub</a>
         </div>
     </div>
 </footer>
 
-<!-- Botón ir arriba -->
-<button
-        id="btn-ir-arriba"
-        class="fixed bottom-24 right-6 z-50 w-12 h-12 rounded-full bg-[#57dffe] text-[#001f26] shadow-lg flex items-center justify-center opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:bg-[#4cd7f6] hover:-translate-y-1"
-        aria-label="Ir arriba"
-        type="button"
->
+<button id="btn-ir-arriba" class="fixed bottom-24 right-6 z-50 w-12 h-12 rounded-full bg-[#57dffe] text-[#001f26] shadow-lg flex items-center justify-center opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:bg-[#4cd7f6] hover:-translate-y-1" aria-label="Ir arriba" type="button">
     <span class="material-symbols-outlined">keyboard_arrow_up</span>
 </button>
 
 <script>
-    const btnIrArriba = document.getElementById('btn-ir-arriba');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-            btnIrArriba.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-            btnIrArriba.classList.add('opacity-100', 'translate-y-0');
-        } else {
-            btnIrArriba.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-            btnIrArriba.classList.remove('opacity-100', 'translate-y-0');
-        }
-    });
-
-    btnIrArriba.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+    const btnIrArriba=document.getElementById('btn-ir-arriba');
+    window.addEventListener('scroll',()=>{if(window.scrollY>400){btnIrArriba.classList.remove('opacity-0','pointer-events-none','translate-y-4');btnIrArriba.classList.add('opacity-100','translate-y-0')}else{btnIrArriba.classList.add('opacity-0','pointer-events-none','translate-y-4');btnIrArriba.classList.remove('opacity-100','translate-y-0')}});
+    btnIrArriba.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 </script>
 
 <script id="portfolio-motion">
     const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const header=document.querySelector('header');
+
     function updateHeader(){if(window.scrollY>50){header.classList.add('shadow-xl','header-scrolled')}else{header.classList.remove('shadow-xl','header-scrolled')}}
-    updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
+    updateHeader();
+    window.addEventListener('scroll',updateHeader,{passive:true});
 
     document.querySelectorAll('.reveal').forEach((el,i)=>{if(!el.style.transitionDelay){el.style.transitionDelay=`${Math.min((i%6)*70,350)}ms`}});
 
     const navLinks=[...document.querySelectorAll('header nav div a[href^="#"]')];
     const sections=navLinks.map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
-    function setActiveNav(){const current=sections.map(s=>({id:s.id,top:Math.abs(s.getBoundingClientRect().top-120)})).sort((a,b)=>a.top-b.top)[0];navLinks.forEach(l=>l.classList.toggle('active-nav',l.getAttribute('href')===`#${current?.id}`))}
-    window.addEventListener('scroll',setActiveNav,{passive:true});setActiveNav();
+
+    function setActiveNav(){
+        const current=sections.map(s=>({id:s.id,top:Math.abs(s.getBoundingClientRect().top-120)})).sort((a,b)=>a.top-b.top)[0];
+        navLinks.forEach(l=>l.classList.toggle('active-nav',l.getAttribute('href')===`#${current?.id}`));
+    }
+
+    window.addEventListener('scroll',setActiveNav,{passive:true});
+    setActiveNav();
 
     const revealItems=document.querySelectorAll('.reveal,.timeline-line');
     if(!prefersReducedMotion&&'IntersectionObserver'in window){
-        const observer=new IntersectionObserver((entries,obs)=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add('is-visible');if(entry.target.classList.contains('timeline-line'))entry.target.classList.add('timeline-visible');obs.unobserve(entry.target)})},{threshold:.16,rootMargin:'0px 0px -60px 0px'});
+        const observer=new IntersectionObserver((entries,obs)=>{
+            entries.forEach(entry=>{
+                if(!entry.isIntersecting)return;
+                entry.target.classList.add('is-visible');
+                if(entry.target.classList.contains('timeline-line'))entry.target.classList.add('timeline-visible');
+                obs.unobserve(entry.target);
+            });
+        },{threshold:.16,rootMargin:'0px 0px -60px 0px'});
         revealItems.forEach(item=>observer.observe(item));
-    }else{revealItems.forEach(item=>item.classList.add('is-visible','timeline-visible'))}
+    }else{
+        revealItems.forEach(item=>item.classList.add('is-visible','timeline-visible'));
+    }
 
     function animateCounters(){
         document.querySelectorAll('.counter').forEach(counter=>{
             const target=Number(counter.dataset.count||0),suffix=counter.dataset.suffix||'',duration=900,start=performance.now();
             counter.textContent=`0${suffix}`;
-            function tick(now){const p=Math.min((now-start)/duration,1),e=1-Math.pow(1-p,3);counter.textContent=`${Math.round(target*e)}${suffix}`;if(p<1)requestAnimationFrame(tick)}
+            function tick(now){
+                const p=Math.min((now-start)/duration,1),e=1-Math.pow(1-p,3);
+                counter.textContent=`${Math.round(target*e)}${suffix}`;
+                if(p<1)requestAnimationFrame(tick);
+            }
             requestAnimationFrame(tick);
         });
     }
+
     const firstStat=document.querySelector('.hero-stat');
     if(firstStat&&'IntersectionObserver'in window&&!prefersReducedMotion){
-        const co=new IntersectionObserver((entries,obs)=>{if(entries.some(e=>e.isIntersecting)){animateCounters();obs.disconnect()}},{threshold:.1,rootMargin:'0px 0px 0px 0px'});
+        const co=new IntersectionObserver((entries,obs)=>{if(entries.some(e=>e.isIntersecting)){animateCounters();obs.disconnect()}},{threshold:.1});
         co.observe(firstStat);
-        setTimeout(()=>{if(document.querySelector('.counter')?.textContent?.startsWith('8')) return; animateCounters(); co.disconnect();},700);
-    }else{animateCounters()}
+    }else{
+        animateCounters();
+    }
 
-    document.getElementById('contact-form').addEventListener('submit',function(event){event.preventDefault();alert('Gracias por tu mensaje. Luego conectaremos este formulario a un endpoint real.');event.target.reset()});
+    document.getElementById('contact-form').addEventListener('submit',function(event){
+        event.preventDefault();
+
+        const form=new FormData(event.currentTarget);
+        const name=(form.get('name')||'').toString().trim();
+        const email=(form.get('email')||'').toString().trim();
+        const company=(form.get('company')||'').toString().trim();
+        const phone=(form.get('phone')||'').toString().trim();
+        const process=(form.get('process')||'').toString().trim();
+        const frequency=(form.get('frequency')||'').toString().trim();
+        const timeSpent=(form.get('time_spent')||'').toString().trim();
+        const systems=(form.get('systems')||'').toString().trim();
+        const desiredResult=(form.get('desired_result')||'').toString().trim();
+        const videoUrl=(form.get('video_url')||'').toString().trim();
+
+        if(!name||!email||!process){
+            alert('Completa nombre, correo y el proceso que quieres revisar.');
+            return;
+        }
+
+        const subject=`Proceso para revisar - ${name}`;
+        const body=[
+            'Hola Gustavo,',
+            '',
+            'Quiero revisar el siguiente proceso:',
+            '',
+            `Nombre: ${name}`,
+            `Correo: ${email}`,
+            `Empresa: ${company||'No informada'}`,
+            `Teléfono: ${phone||'No informado'}`,
+            '',
+            'PROCESO / TAREA',
+            process,
+            '',
+            `Frecuencia: ${frequency||'No informada'}`,
+            `Tiempo consumido: ${timeSpent||'No informado'}`,
+            `Sistemas / herramientas: ${systems||'No informados'}`,
+            '',
+            'RESULTADO DESEADO',
+            desiredResult||'No informado',
+            '',
+            `Video / captura: ${videoUrl||'No informado'}`
+        ].join('\n');
+
+        window.location.href=`mailto:hola@gcardenas.cl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
 </script>
+
 </body>
 </html>

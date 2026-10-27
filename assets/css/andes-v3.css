@@ -24,16 +24,16 @@ body[data-page="detalle"] .hero::before{background-position:center 61%}body[data
 @media(max-width:640px){.container,.hero-inner,.hero--compact .hero-inner{width:calc(100% - 36px)}.brand img{width:205px}.hero,.hero--compact,.hero-inner,.hero--compact .hero-inner{min-height:680px}.hero-inner,.hero--compact .hero-inner{padding-top:128px;padding-bottom:28px}.hero-content h1{font-size:clamp(2.5rem,10vw,3.7rem);line-height:1.08}.hero-desc{font-size:1rem;line-height:1.65}.hero-metrics{gap:16px}.hero-metric{max-width:175px;gap:7px}.hero-metric-icon{font-size:1.25rem}.hero-metric strong{font-size:.8rem}.hero-metric span:last-child{font-size:.72rem}.section{padding:60px 0}.section-head h2{font-size:2.1rem}.grid-2,.grid-3,.grid-4,.split{grid-template-columns:1fr}.service-card,.feature-card{padding:5px 0}.home-services .services-row{grid-template-columns:1fr 1fr}.home-projects .projects-editorial{grid-template-columns:1fr}.home-projects .projects-intro{grid-column:auto}.project-card img{aspect-ratio:1.7}.contact-panel{padding:25px}.contact-layout{gap:15px}.callout{padding:31px}.footer-grid{grid-template-columns:1fr}.split img{min-height:0}.project-detail-main{padding:60px 0}}
 
 /* Andes 1.0.1: navegación blanca permanente y sistema iconográfico Tabler */
-.site-nav,.site-nav.is-sticky{position:sticky;top:0;left:auto;right:auto;background:#fff;box-shadow:0 1px 0 rgba(11,48,67,.09);backdrop-filter:none;-webkit-backdrop-filter:none;z-index:40}
-.site-nav.is-sticky{position:sticky}
+.site-nav,.site-nav.is-sticky{position:fixed;top:0;left:0;right:0;background:#fff;box-shadow:0 1px 0 rgba(11,48,67,.09);backdrop-filter:none;-webkit-backdrop-filter:none;z-index:40}
+.site-nav.is-sticky{position:fixed}
 .nav-menu a{color:var(--ink-dark)}
 .nav-menu .nav-contact{color:#fff}
 .nav-toggle{color:var(--ink-dark)}
 .nav-toggle .ti{font-size:1.45rem}
-.hero-inner,.hero--compact .hero-inner{padding-top:54px}
+.hero,.hero--compact{padding-top:90px}.hero-inner,.hero--compact .hero-inner{padding-top:54px}
 .hero-metric-icon{display:inline-flex;align-items:center;justify-content:center;min-width:32px}
 .hero-metric-icon .ti{font-size:1.75rem;font-weight:400}
 .service-card .icon .ti,.feature-card .icon .ti{font-size:1.65rem;font-weight:400}
 .btn .ti,.nav-contact .ti{font-size:1.1em;vertical-align:-.1em}
-@media(max-width:900px){.nav-menu{top:calc(100% - 4px)}}
-@media(max-width:640px){.hero-inner,.hero--compact .hero-inner{padding-top:48px}.hero-metric-icon .ti{font-size:1.45rem}}
+@media(max-width:900px){.nav-menu{top:calc(100% - 4px)}.hero,.hero--compact{padding-top:83px}}
+@media(max-width:640px){.hero,.hero--compact{padding-top:83px}.hero-inner,.hero--compact .hero-inner{padding-top:48px}.hero-metric-icon .ti{font-size:1.45rem}}

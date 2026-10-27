@@ -37,3 +37,7 @@ body[data-page="detalle"] .hero::before{background-position:center 61%}body[data
 .btn .ti,.nav-contact .ti{font-size:1.1em;vertical-align:-.1em}
 @media(max-width:900px){.nav-menu{top:calc(100% - 4px)}.hero,.hero--compact{padding-top:83px}}
 @media(max-width:640px){.hero,.hero--compact{padding-top:83px}.hero-inner,.hero--compact .hero-inner{padding-top:48px}.hero-metric-icon .ti{font-size:1.45rem}}
+
+/* Consistencia de acciones: flecha Tabler diagonal en cada botón */
+.btn .ti-arrow-up-right,.btn-link .ti-arrow-up-right,.nav-contact .ti-arrow-up-right,button[type="submit"] .ti-arrow-up-right{display:inline-block;flex:none;font-size:1.15em;line-height:1;vertical-align:-.08em;transition:transform .2s ease}
+.btn:hover .ti-arrow-up-right,.btn-link:hover .ti-arrow-up-right,.nav-contact:hover .ti-arrow-up-right,button[type="submit"]:hover .ti-arrow-up-right{transform:translate(2px,-2px)}

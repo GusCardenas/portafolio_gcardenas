@@ -67,3 +67,82 @@ function footerHTML(){const year=new Date().getFullYear();return `<footer class=
 function initNavigation(){const nav=document.querySelector('.site-nav');const toggle=document.querySelector('.nav-toggle');const menu=document.querySelector('.nav-menu');const onScroll=()=>nav.classList.toggle('is-sticky',window.scrollY>25);onScroll();addEventListener('scroll',onScroll,{passive:true});toggle?.addEventListener('click',()=>{const open=menu.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');toggle.innerHTML=open?'<i class="ti ti-x" aria-hidden="true"></i>':'<i class="ti ti-menu-2" aria-hidden="true"></i>'});menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')}))}
 function initContactForm(){const form=document.querySelector('#contact-form');if(!form)return;form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const data=new FormData(form);const lines=[`Nombre: ${data.get('nombre')}`,`Empresa: ${data.get('empresa')||'No indicada'}`,`Email: ${data.get('email')}`,`Proyecto: ${data.get('tipo')}`,`Presupuesto: ${data.get('presupuesto')||'No indicado'}`,'',String(data.get('mensaje'))];const subject=`Consulta web: ${data.get('tipo')}`;const url=`mailto:hola@gcardenas.cl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;window.location.href=url;document.getElementById('form-feedback').textContent='Se abrirá tu aplicación de correo con el mensaje preparado. Verifica y envía el correo desde allí.'})}
 document.addEventListener('DOMContentLoaded',()=>{const page=document.body.dataset.page||'inicio';const header=document.getElementById('site-header');const footer=document.getElementById('site-footer');if(header)header.innerHTML=headerHTML(page);if(footer)footer.innerHTML=footerHTML();initNavigation();initContactForm()});
+
+
+/**
+ * Animación progresiva de contenido, microinteracciones y progreso de lectura.
+ * Sin dependencias; respeta las preferencias de accesibilidad del dispositivo.
+ */
+function initMotion() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
+
+  const selectors = [
+    'main .section-head',
+    'main .services-intro',
+    'main .projects-intro',
+    'main .copy',
+    'main .service-card',
+    'main .feature-card',
+    'main .project-card',
+    'main .process-step',
+    'main .detail-stat',
+    'main .split > img',
+    'main .detail-image',
+    'main .contact-panel',
+    'main .contact-line',
+    'main .callout',
+    '.site-footer .footer-grid > div'
+  ];
+  const staggered = '.service-card, .feature-card, .project-card, .process-step, .detail-stat, .contact-panel, .contact-line, .footer-grid > div';
+  const targets = [...document.querySelectorAll(selectors.join(','))];
+  document.documentElement.classList.add('motion-enabled');
+
+  targets.forEach(element => {
+    element.setAttribute('data-reveal', '');
+    const group = [...element.parentElement.children].filter(sibling => sibling.matches(staggered));
+    const index = group.indexOf(element);
+    if (index > 0) {
+      element.style.setProperty('--motion-delay', Math.min(index, 4) * 95 + 'ms');
+    }
+  });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+
+    targets.forEach(element => observer.observe(element));
+  } else {
+    targets.forEach(element => element.classList.add('is-visible'));
+  }
+
+  const nav = document.querySelector('.site-nav');
+  if (!nav) return;
+  const progress = document.createElement('span');
+  progress.className = 'motion-progress';
+  progress.setAttribute('aria-hidden', 'true');
+  nav.appendChild(progress);
+
+  let frameRequested = false;
+  const updateProgress = () => {
+    const limit = document.documentElement.scrollHeight - window.innerHeight;
+    const fraction = limit > 0 ? Math.max(0, Math.min(1, window.scrollY / limit)) : 0;
+    progress.style.transform = 'scaleX(' + fraction + ')';
+    frameRequested = false;
+  };
+  const requestProgress = () => {
+    if (frameRequested) return;
+    frameRequested = true;
+    window.requestAnimationFrame(updateProgress);
+  };
+
+  window.addEventListener('scroll', requestProgress, { passive: true });
+  window.addEventListener('resize', requestProgress, { passive: true });
+  updateProgress();
+}
+document.addEventListener('DOMContentLoaded', initMotion);

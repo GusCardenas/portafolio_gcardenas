@@ -1,3 +1,4 @@
+@import url('./motion.css');
 /* Andes Contemporáneo V3: sistema editorial compartido */
 :root{--max:1370px;--ink:#0b3043;--ink-dark:#062b3d;--muted:#536d7d;--line:#e2edf1;--snow:#f5f8fa}
 html{scroll-padding-top:100px}body{font-size:16px;background:#fff} .container{width:min(calc(100% - 104px),var(--max))}

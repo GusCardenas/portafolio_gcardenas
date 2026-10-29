@@ -47,3 +47,8 @@ body[data-page="detalle"] .hero::before{background-position:center 61%}body[data
 @media(min-width:1151px){.home-services .services-row{grid-template-columns:1.35fr repeat(3,minmax(0,1fr))}.home-projects .projects-editorial{grid-template-columns:285px minmax(0,1fr)}}
 .home-services .container>.btn-link{display:inline-block;margin-top:24px}
 .home-sectors .grid+p{margin-top:28px}
+
+/* Inicio: ajuste tipográfico del titular sin afectar otras cabeceras. */
+@media(min-width:901px){body[data-page="inicio"] .hero-content{max-width:850px}body[data-page="inicio"] .hero-content h1{max-width:850px;font-size:clamp(3.2rem,4.25vw,4.25rem);line-height:1.12}}
+@media(max-width:900px){body[data-page="inicio"] .hero-content h1{font-size:clamp(2.5rem,6vw,3.6rem);line-height:1.12}}
+@media(max-width:640px){body[data-page="inicio"] .hero-content h1{font-size:clamp(2.35rem,9vw,3.25rem);line-height:1.12}}

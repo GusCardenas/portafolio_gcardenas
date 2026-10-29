@@ -6,7 +6,7 @@
  */
 const PAGE_CONFIG = {
   inicio: {
-    title: 'Sistemas e integraciones<br>para empresas que no pueden<br>detener su operación.',
+    title: 'Sistemas e integraciones<br> para empresas que no pueden<br> detener su operación.',
     eyebrow: 'Desarrollo de software · Integraciones · Automatización',
     description: 'Analizo el proceso, diseño la solución e implemento en semanas, con la experiencia de haber trabajado dentro de industrias consolidadas y construido productos propios.',
     buttons: [{ text: 'Evaluar mi proceso', href: 'contacto.html', style: 'primary' }, { text: 'Ver casos', href: 'proyectos.html', style: 'outline' }],

@@ -61,7 +61,7 @@ body[data-page="detalle"] .hero::before{background-position:center 61%}body[data
   body[data-page="inicio"] .hero-metrics{margin-top:22px}
 }
 @media(max-width:640px){
-  body[data-page="inicio"] .hero-content h1{font-size:clamp(2.25rem,8.6vw,3.1rem);line-height:1.12}
+  body[data-page="inicio"] .hero-content h1{font-size:clamp(2rem,8vw,2.45rem);line-height:1.14;overflow-wrap:normal;word-break:normal}
   body[data-page="inicio"] .hero-content h1 br{display:none}
   body[data-page="inicio"] .hero-desc{margin-top:14px}
   body[data-page="inicio"] .hero-metrics{margin-top:20px}

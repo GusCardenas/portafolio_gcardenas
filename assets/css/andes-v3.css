@@ -42,3 +42,8 @@ body[data-page="detalle"] .hero::before{background-position:center 61%}body[data
 /* Consistencia de acciones: flecha Tabler diagonal en cada botón */
 .btn .ti-arrow-up-right,.btn-link .ti-arrow-up-right,.nav-contact .ti-arrow-up-right,button[type="submit"] .ti-arrow-up-right{display:inline-block;flex:none;font-size:1.15em;line-height:1;vertical-align:-.08em;transition:transform .2s ease}
 .btn:hover .ti-arrow-up-right,.btn-link:hover .ti-arrow-up-right,.nav-contact:hover .ti-arrow-up-right,button[type="submit"]:hover .ti-arrow-up-right{transform:translate(2px,-2px)}
+
+/* Contenido v2, Inicio: grillas de tres servicios y un caso destacado. */
+@media(min-width:1151px){.home-services .services-row{grid-template-columns:1.35fr repeat(3,minmax(0,1fr))}.home-projects .projects-editorial{grid-template-columns:285px minmax(0,1fr)}}
+.home-services .container>.btn-link{display:inline-block;margin-top:24px}
+.home-sectors .grid+p{margin-top:28px}

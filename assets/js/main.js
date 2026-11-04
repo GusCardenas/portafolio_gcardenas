@@ -8,7 +8,7 @@ const PAGE_CONFIG = {
   inicio: {
     title: 'Soluciones de software para problemas reales.',
     eyebrow: 'Gustavo Cárdenas · Consultor tecnológico y desarrollador de software',
-    description: 'Ayudo a empresas a mejorar procesos mediante consultoría, desarrollo de software, integración de plataformas y automatización. Del análisis de necesidades a la implementación.',
+    description: 'Consultoría, desarrollo e integración de sistemas para mejorar procesos, reducir fricciones y dar continuidad a operaciones empresariales. Del diagnóstico a la implementación.',
     buttons: [{ text: 'Conversemos sobre su proyecto', href: 'contacto.html', style: 'primary' }, { text: 'Ver casos', href: 'proyectos.html', style: 'outline' }],
     metrics: [{ icon: 'code', title: 'Más de 10 años', detail: 'En desarrollo y arquitectura de software' }, { icon: 'building-factory', title: 'Industrias consolidadas', detail: 'Energía, salud, certificación y logística' }, { icon: 'layout-dashboard', title: 'Productos propios', detail: 'En producción, con entregas por etapas' }]
   },
@@ -96,11 +96,11 @@ function initContactForm() {
       }
       form.reset();
       if (feedback) {
-        feedback.textContent = 'El servicio de formularios ha aceptado su consulta. La entrega al destinatario depende de la activación y disponibilidad del servicio.';
+        feedback.textContent = 'Su consulta fue recibida por el servicio de formularios. Si es su primer envío, la entrega puede requerir una activación pendiente. Responderé dentro de un día hábil una vez que el mensaje llegue al correo.';
       }
     } catch (error) {
       if (feedback) {
-        feedback.textContent = 'No fue posible enviar la consulta. Inténtelo nuevamente o escriba directamente a hola@gcardenas.cl.';
+        feedback.textContent = 'No se pudo completar el envío. Inténtelo nuevamente o escriba a hola@gcardenas.cl. No se ha confirmado la recepción de su mensaje.';
         feedback.setAttribute('role', 'alert');
       }
     } finally {

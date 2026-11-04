@@ -68,27 +68,45 @@ function initNavigation(){const nav=document.querySelector('.site-nav');const to
 function initContactForm() {
   const form = document.querySelector('#contact-form');
   if (!form) return;
-  form.addEventListener('submit', event => {
+  const button = form.querySelector('button[type="submit"]');
+  const feedback = document.getElementById('form-feedback');
+  form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
-    const data = new FormData(form);
-    const read = key => String(data.get(key) || '').trim();
-    const lines = [
-      'Nombre: ' + read('nombre'),
-      'Empresa: ' + (read('empresa') || 'No indicada'),
-      'Cargo: ' + (read('cargo') || 'No indicado'),
-      'Correo: ' + read('email'),
-      'Teléfono: ' + (read('telefono') || 'No indicado'),
-      'Área: ' + (read('tipo') || 'No especificada'),
-      '',
-      'Necesidad o desafío:',
-      read('mensaje')
-    ];
-    const subject = 'Consulta profesional' + (read('tipo') ? ' - ' + read('tipo') : '');
-    const mailto = 'mailto:hola@gcardenas.cl?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-    const feedback = document.getElementById('form-feedback');
-    if (feedback) feedback.textContent = 'Se intentará abrir su aplicación de correo con el mensaje preparado. Debe enviarlo desde allí; esta página no registra ni confirma el envío.';
-    window.location.href = mailto;
+    if (!form.reportValidity() || button.disabled) return;
+    const original = button.innerHTML;
+    button.disabled = true;
+    button.textContent = 'Enviando mensaje…';
+    if (feedback) {
+      feedback.textContent = 'Enviando su consulta…';
+      feedback.setAttribute('role', 'status');
+    }
+    try {
+      const data = new FormData(form);
+      data.set('_subject', 'Nueva consulta desde gcardenas.cl');
+      data.set('_template', 'table');
+      data.set('_url', window.location.href);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      });
+      const result = await response.json();
+      if (!response.ok || result.success === 'false' || result.success === false) {
+        throw new Error('No se pudo registrar la consulta.');
+      }
+      form.reset();
+      if (feedback) {
+        feedback.textContent = 'El servicio de formularios ha aceptado su consulta. La entrega al destinatario depende de la activación y disponibilidad del servicio.';
+      }
+    } catch (error) {
+      if (feedback) {
+        feedback.textContent = 'No fue posible enviar la consulta. Inténtelo nuevamente o escriba directamente a hola@gcardenas.cl.';
+        feedback.setAttribute('role', 'alert');
+      }
+    } finally {
+      button.disabled = false;
+      button.innerHTML = original;
+    }
   });
 }
 document.addEventListener('DOMContentLoaded',()=>{const page=document.body.dataset.page||'inicio';const header=document.getElementById('site-header');const footer=document.getElementById('site-footer');if(header)header.innerHTML=headerHTML(page);if(footer)footer.innerHTML=footerHTML();initNavigation();initContactForm()});

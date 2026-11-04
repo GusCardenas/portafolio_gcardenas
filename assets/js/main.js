@@ -13,11 +13,11 @@ const PAGE_CONFIG = {
     metrics: [{ icon: 'code', title: 'Más de 10 años', detail: 'En desarrollo y arquitectura de software' }, { icon: 'building-factory', title: 'Industrias consolidadas', detail: 'Energía, salud, certificación y logística' }, { icon: 'layout-dashboard', title: 'Productos propios', detail: 'En producción, con entregas por etapas' }]
   },
   servicios: {
-    title: 'Consultoría y software para su operación.',
-    eyebrow: 'Servicios',
-    description: 'Analizo problemas, diseño soluciones y desarrollo plataformas, integraciones y mejoras tecnológicas adaptadas a cada organización.',
-    buttons: [{ text: 'Solicitar propuesta', href: 'contacto.html', style: 'primary' }],
-    metrics: [{ icon: 'palette', title: 'Diseño estratégico', detail: 'Belleza y funcionalidad' }, { icon: 'code', title: 'Desarrollo sólido', detail: 'Rendimiento y evolución' }, { icon: 'trending-up', title: 'Objetivos claros', detail: 'Foco en tu negocio' }]
+    title: 'Tecnología que responde a los desafíos de su empresa.',
+    eyebrow: 'Servicios · Consultoría tecnológica y desarrollo de software',
+    description: 'Del diagnóstico a la implementación: diseño soluciones a medida, conecto sistemas y ayudo a evolucionar aplicaciones que sostienen la operación.',
+    buttons: [{ text: 'Conversemos sobre su proyecto', href: 'contacto.html', style: 'primary' }, { text: 'Explorar especialidades', href: '#especialidades', style: 'outline' }],
+    metrics: [{ icon: 'search', title: 'Diagnóstico', detail: 'Comprender el problema real' }, { icon: 'code', title: 'Desarrollo', detail: 'Construir soluciones útiles' }, { icon: 'arrows-exchange', title: 'Integración', detail: 'Conectar y evolucionar sistemas' }]
   },
   proyectos: {
     title: 'Proyectos y soluciones desarrolladas.',

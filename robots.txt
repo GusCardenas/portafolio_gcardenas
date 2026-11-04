@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /proyecto-estacion48.html
+Sitemap: https://guscardenas.github.io/portafolio_gcardenas/sitemap.xml

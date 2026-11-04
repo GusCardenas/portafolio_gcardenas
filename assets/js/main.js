@@ -41,11 +41,11 @@ const PAGE_CONFIG = {
     metrics: [{ icon: 'search', title: 'Análisis', detail: 'Comprender necesidades y procesos' }, { icon: 'sitemap', title: 'Arquitectura', detail: 'Diseñar soluciones e integraciones' }, { icon: 'code', title: 'Implementación', detail: 'Desarrollo y puesta en producción' }]
   },
   contacto: {
-    title: 'Conversemos sobre<br>tu próximo proyecto.',
-    eyebrow: 'Contacto',
-    description: '¿Tienes una idea o quieres mejorar tu presencia digital? Cuéntame qué necesitas y evaluemos juntos el mejor camino.',
+    title: 'Conversemos sobre su desafío tecnológico.',
+    eyebrow: 'Contacto · Consultoría y desarrollo de software',
+    description: 'Cuénteme qué necesita resolver o mejorar. Una primera conversación permite comprender el contexto y explorar alternativas de trabajo.',
     buttons: [],
-    metrics: [{ icon: 'mountain', title: 'A tu medida', detail: 'Propuestas personalizadas' }, { icon: 'users', title: 'Contacto directo', detail: 'Sin intermediarios' }, { icon: 'chart-bar', title: 'Resultados', detail: 'Foco en necesidades reales' }]
+    metrics: [{ icon: 'message-circle', title: 'Conversación inicial', detail: 'Comprender su necesidad' }, { icon: 'search', title: 'Evaluación de alternativas', detail: 'Definir el camino adecuado' }, { icon: 'clipboard-check', title: 'Alcance claro', detail: 'Propuesta según requerimientos' }]
   }
 };
 const NAV_LINKS = [
@@ -65,7 +65,32 @@ function headerHTML(page) {
 }
 function footerHTML(){const year=new Date().getFullYear();return `<footer class="site-footer"><div class="container"><div class="footer-grid"><div><h3>Gustavo Cárdenas</h3><p>Sistemas, integraciones y automatización para empresas.<br>Desde Chile.</p></div><div><h3>Explora</h3><div class="footer-links"><a href="servicios.html">Servicios</a><a href="proyectos.html">Proyectos</a><a href="sobre-mi.html">Sobre mí</a></div></div><div><h3>Conversemos</h3><div class="footer-links"><a href="contacto.html">Formulario de contacto</a><a href="mailto:hola@gcardenas.cl">hola@gcardenas.cl</a></div></div></div><div class="footer-bottom"><span>© ${year} Gustavo Cárdenas. Todos los derechos reservados.</span><span>Software a medida desde Chile.</span></div></div></footer>`}
 function initNavigation(){const nav=document.querySelector('.site-nav');const toggle=document.querySelector('.nav-toggle');const menu=document.querySelector('.nav-menu');const onScroll=()=>nav.classList.toggle('is-sticky',window.scrollY>25);onScroll();addEventListener('scroll',onScroll,{passive:true});toggle?.addEventListener('click',()=>{const open=menu.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');toggle.innerHTML=open?'<i class="ti ti-x" aria-hidden="true"></i>':'<i class="ti ti-menu-2" aria-hidden="true"></i>'});menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')}))}
-function initContactForm(){const form=document.querySelector('#contact-form');if(!form)return;form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const data=new FormData(form);const lines=[`Nombre: ${data.get('nombre')}`,`Empresa: ${data.get('empresa')||'No indicada'}`,`Email: ${data.get('email')}`,`Proyecto: ${data.get('tipo')}`,`Presupuesto: ${data.get('presupuesto')||'No indicado'}`,'',String(data.get('mensaje'))];const subject=`Consulta web: ${data.get('tipo')}`;const url=`mailto:hola@gcardenas.cl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;window.location.href=url;document.getElementById('form-feedback').textContent='Se abrirá tu aplicación de correo con el mensaje preparado. Verifica y envía el correo desde allí.'})}
+function initContactForm() {
+  const form = document.querySelector('#contact-form');
+  if (!form) return;
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    const read = key => String(data.get(key) || '').trim();
+    const lines = [
+      'Nombre: ' + read('nombre'),
+      'Empresa: ' + (read('empresa') || 'No indicada'),
+      'Cargo: ' + (read('cargo') || 'No indicado'),
+      'Correo: ' + read('email'),
+      'Teléfono: ' + (read('telefono') || 'No indicado'),
+      'Área: ' + (read('tipo') || 'No especificada'),
+      '',
+      'Necesidad o desafío:',
+      read('mensaje')
+    ];
+    const subject = 'Consulta profesional' + (read('tipo') ? ' - ' + read('tipo') : '');
+    const mailto = 'mailto:hola@gcardenas.cl?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    const feedback = document.getElementById('form-feedback');
+    if (feedback) feedback.textContent = 'Se intentará abrir su aplicación de correo con el mensaje preparado. Debe enviarlo desde allí; esta página no registra ni confirma el envío.';
+    window.location.href = mailto;
+  });
+}
 document.addEventListener('DOMContentLoaded',()=>{const page=document.body.dataset.page||'inicio';const header=document.getElementById('site-header');const footer=document.getElementById('site-footer');if(header)header.innerHTML=headerHTML(page);if(footer)footer.innerHTML=footerHTML();initNavigation();initContactForm()});
 
 

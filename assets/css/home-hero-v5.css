@@ -1,25 +1,25 @@
 /* Portada: jerarquía del hero. Sólo Inicio. */
 body[data-page="inicio"] .hero{min-height:640px;display:flex;align-items:stretch}
-body[data-page="inicio"] .hero-inner{min-height:0;display:flex;flex-direction:column;justify-content:center;padding-top:100px;padding-bottom:0}
+body[data-page="inicio"] .hero-inner{min-height:0;display:flex;flex-direction:column;justify-content:center;padding-top:100px;padding-bottom:0;position:relative;z-index:1}
 body[data-page="inicio"] .hero-content{max-width:690px;margin:0;padding:34px 0 42px}
 body[data-page="inicio"] .hero-content .eyebrow{font-size:.68rem;letter-spacing:.22em;line-height:1.7;margin-bottom:21px;max-width:650px}
 body[data-page="inicio"] .hero-content h1{font-size:clamp(2.8rem,3.65vw,4.35rem);max-width:690px;line-height:1.13;letter-spacing:-.052em;text-wrap:balance}
 body[data-page="inicio"] .hero-desc{max-width:575px;font-size:1.08rem;line-height:1.64;margin-top:23px;color:#365769}
 body[data-page="inicio"] .hero .actions{margin-top:28px;gap:13px}
 body[data-page="inicio"] .hero .actions .btn{min-height:50px}
-body[data-page="inicio"] .hero-metrics{width:100%;margin:0;padding:20px 0 23px;border-top:1px solid rgba(14,63,82,.18);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+body[data-page="inicio"] .hero-metrics{width:100%;margin:0;padding:20px 24px 23px;border-top:1px solid rgba(14,63,82,.14);background:rgba(255,255,255,.28);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border-radius:14px 14px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
 body[data-page="inicio"] .hero-metric{max-width:none;align-items:center;gap:13px}
 body[data-page="inicio"] .hero-metric-icon{font-size:1.35rem;min-width:25px}
 body[data-page="inicio"] .hero-metric-icon .ti{font-size:1.5rem}
 body[data-page="inicio"] .hero-metric strong{font-size:.88rem;line-height:1.3}
 body[data-page="inicio"] .hero-metric span:last-child{font-size:.75rem;line-height:1.5}
-body[data-page="inicio"] .hero::after{background:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(249,253,255,.9) 30%,rgba(242,249,251,.60) 55%,rgba(221,237,241,.10) 90%),linear-gradient(0deg,rgba(9,45,63,.14),transparent 35%)}
+body[data-page="inicio"] .hero::after{background:linear-gradient(90deg,rgba(255,255,255,.92) 0%,rgba(249,253,255,.88) 28%,rgba(244,250,252,.72) 55%,rgba(236,246,249,.60) 78%,rgba(228,240,244,.54) 100%),linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,.06) 45%,rgba(12,49,67,.10) 100%)}
 @media(max-width:900px){
  body[data-page="inicio"] .hero{min-height:0}
  body[data-page="inicio"] .hero-inner{padding-top:92px}
  body[data-page="inicio"] .hero-content{padding:36px 0}
  body[data-page="inicio"] .hero-content h1{font-size:clamp(2.65rem,5.4vw,3.8rem)}
- body[data-page="inicio"] .hero-metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+ body[data-page="inicio"] .hero-metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:18px 18px 20px}
  body[data-page="inicio"] .hero-metric{gap:8px}
 }
 @media(max-width:640px){
@@ -30,8 +30,8 @@ body[data-page="inicio"] .hero::after{background:linear-gradient(90deg,rgba(255,
  body[data-page="inicio"] .hero-desc{font-size:.98rem;line-height:1.62;margin-top:18px}
  body[data-page="inicio"] .hero .actions{margin-top:22px;gap:10px}
  body[data-page="inicio"] .hero .actions .btn{font-size:.82rem;padding:12px 16px}
- body[data-page="inicio"] .hero-metrics{grid-template-columns:1fr;gap:12px;padding:18px 0 22px}
+ body[data-page="inicio"] .hero-metrics{grid-template-columns:1fr;gap:12px;padding:16px 16px 18px;border-radius:12px}
  body[data-page="inicio"] .hero-metric{gap:11px}
  body[data-page="inicio"] .hero-metric span:last-child{font-size:.76rem}
- body[data-page="inicio"] .hero::after{background:linear-gradient(90deg,rgba(255,255,255,.97),rgba(248,252,254,.87) 72%,rgba(242,249,251,.50))}
+ body[data-page="inicio"] .hero::after{background:linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(248,252,254,.88) 65%,rgba(240,248,251,.70) 100%),linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(12,49,67,.10) 100%)}
 }

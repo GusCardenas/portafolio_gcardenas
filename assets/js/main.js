@@ -6,25 +6,25 @@
  */
 const PAGE_CONFIG = {
   inicio: {
-    title: 'Sistemas e integraciones para empresas que no pueden detener su operación.',
-    eyebrow: 'Desarrollo de software · Integraciones · Automatización',
-    description: 'Analizo el proceso, diseño la solución e implemento en semanas, con la experiencia de haber trabajado dentro de industrias consolidadas y construido productos propios.',
-    buttons: [{ text: 'Evaluar mi proceso', href: 'contacto.html', style: 'primary' }, { text: 'Ver casos', href: 'proyectos.html', style: 'outline' }],
+    title: 'Soluciones de software para problemas reales.',
+    eyebrow: 'Gustavo Cárdenas · Consultor tecnológico y desarrollador de software',
+    description: 'Ayudo a empresas a mejorar procesos mediante consultoría, desarrollo de software, integración de plataformas y automatización. Del análisis de necesidades a la implementación.',
+    buttons: [{ text: 'Conversemos sobre su proyecto', href: 'contacto.html', style: 'primary' }, { text: 'Ver casos', href: 'proyectos.html', style: 'outline' }],
     metrics: [{ icon: 'code', title: 'Más de 10 años', detail: 'En desarrollo y arquitectura de software' }, { icon: 'building-factory', title: 'Industrias consolidadas', detail: 'Energía, salud, certificación y logística' }, { icon: 'layout-dashboard', title: 'Productos propios', detail: 'En producción, con entregas por etapas' }]
   },
   servicios: {
-    title: 'Tecnología y diseño<br>al servicio de tu negocio.',
+    title: 'Consultoría y software para su operación.',
     eyebrow: 'Servicios',
-    description: 'Desde una landing page hasta una plataforma web a medida. Construyamos lo que tu negocio necesita para crecer.',
+    description: 'Analizo problemas, diseño soluciones y desarrollo plataformas, integraciones y mejoras tecnológicas adaptadas a cada organización.',
     buttons: [{ text: 'Solicitar propuesta', href: 'contacto.html', style: 'primary' }],
     metrics: [{ icon: 'palette', title: 'Diseño estratégico', detail: 'Belleza y funcionalidad' }, { icon: 'code', title: 'Desarrollo sólido', detail: 'Rendimiento y evolución' }, { icon: 'trending-up', title: 'Objetivos claros', detail: 'Foco en tu negocio' }]
   },
   proyectos: {
-    title: 'Ideas reales.<br>Proyectos con propósito.',
+    title: 'Proyectos y soluciones desarrolladas.',
     eyebrow: 'Portafolio',
-    description: 'Una selección de experiencias digitales desarrolladas para resolver necesidades concretas.',
+    description: 'Productos SaaS, plataformas empresariales e integración de sistemas: experiencia aplicada a problemas reales.',
     buttons: [{ text: 'Conversemos', href: 'contacto.html', style: 'primary' }],
-    metrics: [{ icon: 'world-www', title: 'Sitios web', detail: 'Identidad y presencia digital' }, { icon: 'layout-dashboard', title: 'Productos SaaS', detail: 'Herramientas para empresas' }, { icon: 'arrows-exchange', title: 'Integraciones', detail: 'Procesos conectados' }]
+    metrics: [{ icon: 'world-www', title: 'Plataformas', detail: 'Software empresarial' }, { icon: 'layout-dashboard', title: 'Productos SaaS', detail: 'Herramientas para empresas' }, { icon: 'arrows-exchange', title: 'Integraciones', detail: 'Procesos conectados' }]
   },
   detalle: {
     title: 'Estación48.<br>Una experiencia digital a medida.',

@@ -1,0 +1,28 @@
+/* Proyectos: mismo lenguaje editorial de las tarjetas de Inicio, sin alterar el resto del sitio. */
+body[data-page="proyectos"] .projects-listing{padding:84px 0 88px;background:#f5f8fa}
+body[data-page="proyectos"] .projects-listing .projects-intro{max-width:860px;margin-bottom:38px}
+body[data-page="proyectos"] .projects-listing .projects-intro .eyebrow{margin-bottom:15px}
+body[data-page="proyectos"] .projects-listing .projects-intro h2{font-size:clamp(2.4rem,3.6vw,4.15rem);line-height:1.1;letter-spacing:-.055em}
+body[data-page="proyectos"] .projects-listing .projects-intro .muted{max-width:750px;margin-top:18px;font-size:1.03rem;line-height:1.7}
+body[data-page="proyectos"] .projects-listing .projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;align-items:stretch}
+body[data-page="proyectos"] .projects-listing .project-card{min-width:0;display:flex;flex-direction:column;border:1px solid #dce8ec;border-radius:18px;background:#fff;box-shadow:0 12px 36px rgba(12,49,67,.055);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+body[data-page="proyectos"] .projects-listing .project-card:hover{transform:translateY(-7px);box-shadow:0 22px 45px rgba(12,49,67,.14);border-color:#aecbd5}
+body[data-page="proyectos"] .projects-listing .project-visual{position:relative;display:block;aspect-ratio:1.62;overflow:hidden;background:#d8e4e9}
+body[data-page="proyectos"] .projects-listing .project-visual img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .65s cubic-bezier(.2,.8,.2,1)}
+body[data-page="proyectos"] .projects-listing .project-card:hover .project-visual img{transform:scale(1.075)}
+body[data-page="proyectos"] .projects-listing .project-visual::after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(4,32,47,.47));pointer-events:none}
+body[data-page="proyectos"] .projects-listing .project-visual-label{position:absolute;left:20px;bottom:17px;z-index:1;color:#fff;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;text-shadow:0 1px 6px rgba(0,0,0,.28)}
+body[data-page="proyectos"] .projects-listing .project-card-body{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:28px 26px 29px}
+body[data-page="proyectos"] .projects-listing .project-number{display:block;margin-bottom:16px;font-size:.72rem;letter-spacing:.14em;font-weight:800;color:#47778d}
+body[data-page="proyectos"] .projects-listing .project-card-body h3{font-size:clamp(1.26rem,1.45vw,1.58rem);line-height:1.28;letter-spacing:-.035em;margin-bottom:13px}
+body[data-page="proyectos"] .projects-listing .project-card-body p{font-size:.92rem;line-height:1.68;color:#526e7b;margin:0 0 19px}
+body[data-page="proyectos"] .projects-listing .project-card-body .tags{margin-bottom:27px;gap:7px}
+body[data-page="proyectos"] .projects-listing .tag{font-size:.7rem;padding:6px 10px}
+body[data-page="proyectos"] .projects-listing .project-card-body>.btn-link{margin-top:auto;font-size:.87rem}
+body[data-page="proyectos"] .projects-listing .project-card-body>.btn-link i{display:inline-block;margin-left:5px;transition:transform .2s ease}
+body[data-page="proyectos"] .projects-listing .project-card:hover .project-card-body>.btn-link i{transform:translate(3px,-3px)}
+body[data-page="proyectos"] .projects-cta{padding:70px 0 85px;background:#fff}
+@media(max-width:1050px){body[data-page="proyectos"] .projects-listing .projects-grid{gap:16px}body[data-page="proyectos"] .projects-listing .project-card-body{padding:22px 20px 24px}}
+@media(max-width:850px){body[data-page="proyectos"] .projects-listing{padding:70px 0}body[data-page="proyectos"] .projects-listing .projects-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}body[data-page="proyectos"] .projects-listing .project-card:last-child{grid-column:1/-1;max-width:600px}}
+@media(max-width:620px){body[data-page="proyectos"] .projects-listing{padding:60px 0}body[data-page="proyectos"] .projects-listing .projects-grid{grid-template-columns:1fr}body[data-page="proyectos"] .projects-listing .project-card:last-child{grid-column:auto;max-width:none}body[data-page="proyectos"] .projects-listing .project-card-body{padding:23px}body[data-page="proyectos"] .projects-listing .projects-intro h2{font-size:clamp(2.1rem,8.4vw,3rem)}body[data-page="proyectos"] .projects-cta{padding:45px 0 60px}}
+@media(prefers-reduced-motion:reduce){body[data-page="proyectos"] .projects-listing .project-card,body[data-page="proyectos"] .projects-listing .project-visual img,body[data-page="proyectos"] .projects-listing .project-card-body>.btn-link i{transition:none!important}body[data-page="proyectos"] .projects-listing .project-card:hover,body[data-page="proyectos"] .projects-listing .project-card:hover .project-visual img,body[data-page="proyectos"] .projects-listing .project-card:hover .project-card-body>.btn-link i{transform:none!important}}

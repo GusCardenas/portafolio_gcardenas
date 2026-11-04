@@ -8,9 +8,9 @@ const PAGE_CONFIG = {
   inicio: {
     title: 'Soluciones de software para problemas reales.',
     eyebrow: 'Gustavo Cárdenas · Consultor tecnológico y desarrollador de software',
-    description: 'Consultoría, desarrollo e integración de sistemas para mejorar procesos, reducir fricciones y dar continuidad a operaciones empresariales. Del diagnóstico a la implementación.',
+    description: 'Consultoría y desarrollo de software para integrar sistemas, mejorar procesos y dar continuidad a las operaciones de su empresa.',
     buttons: [{ text: 'Conversemos sobre su proyecto', href: 'contacto.html', style: 'primary' }, { text: 'Ver casos', href: 'proyectos.html', style: 'outline' }],
-    metrics: [{ icon: 'code', title: 'Más de 10 años', detail: 'En desarrollo y arquitectura de software' }, { icon: 'building-factory', title: 'Industrias consolidadas', detail: 'Energía, salud, certificación y logística' }, { icon: 'layout-dashboard', title: 'Productos propios', detail: 'En producción, con entregas por etapas' }]
+    metrics: [{ icon: 'code', title: 'Más de 10 años', detail: 'Experiencia en software' }, { icon: 'building-factory', title: 'Experiencia sectorial', detail: 'Salud, energía y logística' }, { icon: 'layout-dashboard', title: 'Productos propios', detail: 'Soluciones en producción' }]
   },
   servicios: {
     title: 'Tecnología que responde a los desafíos de su empresa.',

@@ -34,11 +34,11 @@ const PAGE_CONFIG = {
     metrics: [{ icon: 'world-www', title: 'Landing page', detail: 'Identidad y servicios' }, { icon: 'code', title: 'Agenda online', detail: 'Reservas por bloques' }, { icon: 'palette', title: 'Diseño adaptable', detail: 'Escritorio y móvil' }]
   },
   sobre: {
-    title: 'Experiencia técnica.<br>Visión creativa.',
-    eyebrow: 'Sobre mí',
-    description: 'Soy Gustavo Cárdenas. Acompaño a empresas y emprendedores a convertir desafíos en productos y experiencias digitales.',
-    buttons: [{ text: 'Ver mi trabajo', href: 'proyectos.html', style: 'primary' }, { text: 'Contactarme', href: 'contacto.html', style: 'outline' }],
-    metrics: [{ icon: 'devices', title: 'Diseño y desarrollo', detail: 'Una mirada integral' }, { icon: 'trending-up', title: 'Visión de negocio', detail: 'Tecnología con propósito' }, { icon: 'users', title: 'Trato directo', detail: 'Trabajo colaborativo' }]
+    title: 'Experiencia técnica.<br>Soluciones con propósito.',
+    eyebrow: 'Gustavo Cárdenas · Consultor tecnológico y desarrollador de software',
+    description: 'Analizo problemas, diseño soluciones y desarrollo sistemas para operaciones reales. Una mirada que combina criterio técnico y conocimiento de procesos.',
+    buttons: [{ text: 'Conocer mis proyectos', href: 'proyectos.html', style: 'primary' }, { text: 'Conversemos', href: 'contacto.html', style: 'outline' }],
+    metrics: [{ icon: 'search', title: 'Análisis', detail: 'Comprender necesidades y procesos' }, { icon: 'sitemap', title: 'Arquitectura', detail: 'Diseñar soluciones e integraciones' }, { icon: 'code', title: 'Implementación', detail: 'Desarrollo y puesta en producción' }]
   },
   contacto: {
     title: 'Conversemos sobre<br>tu próximo proyecto.',

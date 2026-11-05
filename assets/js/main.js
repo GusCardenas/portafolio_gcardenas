@@ -48,6 +48,26 @@ const PAGE_CONFIG = {
     metrics: [{ icon: 'message-circle', title: 'Conversación inicial', detail: 'Comprender su necesidad' }, { icon: 'search', title: 'Evaluación de alternativas', detail: 'Definir el camino adecuado' }, { icon: 'clipboard-check', title: 'Alcance claro', detail: 'Propuesta según requerimientos' }]
   }
 };
+const CASE_HEADER_CONFIG = {
+  enlacepro: {
+    eyebrow: 'Proyecto 01 · Producto SaaS',
+    title: 'EnlacePro',
+    description: 'Gestión de activos y documentación empresarial.',
+    buttons: [], metrics: []
+  },
+  certificacion: {
+    eyebrow: 'Proyecto 02 · Plataforma empresarial',
+    title: 'Certificación digital',
+    description: 'Evaluaciones y documentos verificables.',
+    buttons: [], metrics: []
+  },
+  corelab: {
+    eyebrow: 'Proyecto 03 · Integración de sistemas',
+    title: 'Core-Lab y OperacionesLab',
+    description: 'Arquitectura y supervisión operativa.',
+    buttons: [], metrics: []
+  }
+};
 const NAV_LINKS = [
   { key:'inicio', label:'Inicio', href:'index.html' },
   { key:'servicios', label:'Servicios', href:'servicios.html' },
@@ -55,61 +75,77 @@ const NAV_LINKS = [
   { key:'sobre', label:'Sobre mí', href:'sobre-mi.html' },
   { key:'contacto', label:'Contacto', href:'contacto.html' }
 ];
-function headerHTML(page) {
-  const cfg = PAGE_CONFIG[page] || PAGE_CONFIG.inicio;
-  const selected = page === 'detalle' ? 'proyectos' : page;
+function headerHTML(page, caseKey = '') {
+  const isCase = Boolean(caseKey && CASE_HEADER_CONFIG[caseKey]);
+  const cfg = isCase ? CASE_HEADER_CONFIG[caseKey] : (PAGE_CONFIG[page] || PAGE_CONFIG.inicio);
+  const selected = isCase || page === 'detalle' ? 'proyectos' : page;
   const nav = NAV_LINKS.map(item => `<a href="${item.href}" ${selected === item.key ? 'aria-current="page"' : ''} class="${item.key === 'contacto' ? 'nav-contact' : ''}">${item.label}${item.key === 'contacto' ? ' <i class="ti ti-arrow-up-right" aria-hidden="true"></i>' : ''}</a>`).join('');
   const buttons = cfg.buttons.map(b => `<a class="btn btn-${b.style}" href="${b.href}">${b.text} <i class="ti ti-arrow-up-right" aria-hidden="true"></i></a>`).join('');
   const metrics = cfg.metrics.slice(0, 3).map(m => `<div class="hero-metric"><span class="hero-metric-icon" aria-hidden="true"><i class="ti ti-${m.icon}"></i></span><div><strong>${m.title}</strong><span>${m.detail}</span></div></div>`).join('');
-  return `<nav class="site-nav" aria-label="Navegación principal"><div class="container nav-inner"><a class="brand" href="index.html" aria-label="Gustavo Cárdenas, ir a inicio"><img src="assets/img/logo.svg" alt="Gustavo Cárdenas — Sistemas, integraciones y automatización" width="286" height="54"></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú"><i class="ti ti-menu-2" aria-hidden="true"></i></button><div class="nav-menu" id="nav-menu">${nav}</div></div></nav><header class="hero ${page === 'inicio' ? '' : 'hero--compact'}"><div class="container hero-inner"><div class="hero-content"><p class="eyebrow">${cfg.eyebrow}</p><h1>${cfg.title}</h1><p class="hero-desc">${cfg.description}</p>${buttons ? `<div class="actions">${buttons}</div>` : ''}</div><div class="hero-metrics">${metrics}</div></div></header>`;
+  const heroClass = isCase ? 'hero--compact hero--case' : (page === 'inicio' ? '' : 'hero--compact');
+  return `<nav class="site-nav" aria-label="Navegación principal"><div class="container nav-inner"><a class="brand" href="index.html" aria-label="Gustavo Cárdenas, ir a inicio"><img src="assets/img/logo.svg" alt="Gustavo Cárdenas — Consultoría tecnológica y software" width="286" height="54"></a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú"><i class="ti ti-menu-2" aria-hidden="true"></i></button><div class="nav-menu" id="nav-menu">${nav}</div></div></nav><header class="hero ${heroClass}"><div class="container hero-inner"><div class="hero-content"><p class="eyebrow">${cfg.eyebrow}</p><h1>${cfg.title}</h1><p class="hero-desc">${cfg.description}</p>${buttons ? `<div class="actions">${buttons}</div>` : ''}</div>${metrics ? `<div class="hero-metrics">${metrics}</div>` : ''}</div></header>`;
 }
-function footerHTML(){const year=new Date().getFullYear();return `<footer class="site-footer"><div class="container"><div class="footer-grid"><div><h3>Gustavo Cárdenas</h3><p>Sistemas, integraciones y automatización para empresas.<br>Desde Chile.</p></div><div><h3>Explora</h3><div class="footer-links"><a href="servicios.html">Servicios</a><a href="proyectos.html">Proyectos</a><a href="sobre-mi.html">Sobre mí</a></div></div><div><h3>Conversemos</h3><div class="footer-links"><a href="contacto.html">Formulario de contacto</a><a href="mailto:hola@gcardenas.cl">hola@gcardenas.cl</a></div></div></div><div class="footer-bottom"><span>© ${year} Gustavo Cárdenas. Todos los derechos reservados.</span><span>Software a medida desde Chile.</span></div></div></footer>`}
+function footerHTML(){const year=new Date().getFullYear();return `<footer class="site-footer"><div class="container"><div class="footer-grid"><div><h3>Gustavo Cárdenas</h3><p>Sistemas, integraciones y automatización para empresas.<br>Desde Chile.</p></div><div><h3>Explora</h3><div class="footer-links"><a href="servicios.html">Servicios</a><a href="proyectos.html">Proyectos</a><a href="sobre-mi.html">Sobre mí</a></div></div><div><h3>Conversemos</h3><div class="footer-links"><a href="contacto.html">Formulario de contacto</a><a href="privacidad.html">Privacidad</a><a href="mailto:hola@gcardenas.cl">hola@gcardenas.cl</a></div></div></div><div class="footer-bottom"><span>© ${year} Gustavo Cárdenas. Todos los derechos reservados.</span><span>Software a medida desde Chile.</span></div></div></footer>`}
 function initNavigation(){const nav=document.querySelector('.site-nav');const toggle=document.querySelector('.nav-toggle');const menu=document.querySelector('.nav-menu');const onScroll=()=>nav.classList.toggle('is-sticky',window.scrollY>25);onScroll();addEventListener('scroll',onScroll,{passive:true});toggle?.addEventListener('click',()=>{const open=menu.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');toggle.innerHTML=open?'<i class="ti ti-x" aria-hidden="true"></i>':'<i class="ti ti-menu-2" aria-hidden="true"></i>'});menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')}))}
 function initContactForm() {
   const form = document.querySelector('#contact-form');
   if (!form) return;
-  const button = form.querySelector('button[type="submit"]');
-  const feedback = document.getElementById('form-feedback');
+  const submit = form.querySelector('button[type="submit"]');
+  const feedback = document.querySelector('#form-feedback');
+  // GitHub Pages permite revisar el diseño, pero no ejecuta el backend PHP.
+  if (window.location.hostname.endsWith('.github.io')) {
+    submit.disabled = true;
+    if (feedback) feedback.textContent = 'El envío está disponible en el sitio definitivo gcardenas.cl, no en la vista previa de GitHub Pages.';
+    return;
+  }
   form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (!form.reportValidity() || button.disabled) return;
-    const original = button.innerHTML;
-    button.disabled = true;
-    button.textContent = 'Enviando mensaje…';
+    if (!form.reportValidity() || submit.disabled) return;
+    const values = new FormData(form);
+    const payload = Object.fromEntries(['nombre','email','empresa','cargo','telefono','tipo','mensaje'].map(key => [key, String(values.get(key) || '').trim()]));
+    payload.website = String(values.get('_honey') || '');
+    payload.privacy = values.get('privacy') === 'yes';
+    const previous = submit.innerHTML;
+    submit.disabled = true;
+    submit.textContent = 'Enviando mensaje…';
     if (feedback) {
+      feedback.setAttribute('role','status');
       feedback.textContent = 'Enviando su consulta…';
-      feedback.setAttribute('role', 'status');
     }
     try {
-      const data = new FormData(form);
-      data.set('_subject', 'Nueva consulta desde gcardenas.cl');
-      data.set('_template', 'table');
-      data.set('_url', window.location.href);
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' }
-      });
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 15000);
+      let response;
+      try {
+        response = await fetch(form.action, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json','Accept':'application/json','X-Requested-With':'XMLHttpRequest'},
+          body: JSON.stringify(payload),
+          signal: controller.signal,
+          credentials: 'same-origin',
+          cache: 'no-store'
+        });
+      } finally {
+        clearTimeout(timer);
+      }
       const result = await response.json();
-      if (!response.ok || result.success === 'false' || result.success === false) {
-        throw new Error('No se pudo registrar la consulta.');
+      if (!response.ok || result.success !== true) {
+        throw new Error(typeof result.message === 'string' ? result.message : 'No fue posible enviar su consulta.');
       }
       form.reset();
-      if (feedback) {
-        feedback.textContent = 'Su consulta fue recibida por el servicio de formularios. Si es su primer envío, la entrega puede requerir una activación pendiente. Responderé dentro de un día hábil una vez que el mensaje llegue al correo.';
-      }
+      if (feedback) feedback.textContent = result.message || 'Su consulta fue enviada correctamente.';
     } catch (error) {
       if (feedback) {
-        feedback.textContent = 'No se pudo completar el envío. Inténtelo nuevamente o escriba a hola@gcardenas.cl. No se ha confirmado la recepción de su mensaje.';
-        feedback.setAttribute('role', 'alert');
+        feedback.setAttribute('role','alert');
+        feedback.textContent = error.name === 'AbortError' ? 'El servidor no respondió a tiempo. Compruebe si el mensaje llegó antes de reintentarlo.' : (error.message || 'No fue posible enviar su consulta. Inténtelo nuevamente.');
       }
     } finally {
-      button.disabled = false;
-      button.innerHTML = original;
+      submit.disabled = false;
+      submit.innerHTML = previous;
     }
   });
 }
-document.addEventListener('DOMContentLoaded',()=>{const page=document.body.dataset.page||'inicio';const header=document.getElementById('site-header');const footer=document.getElementById('site-footer');if(header)header.innerHTML=headerHTML(page);if(footer)footer.innerHTML=footerHTML();initNavigation();initContactForm()});
+document.addEventListener('DOMContentLoaded',()=>{const page=document.body.dataset.page||'inicio';const header=document.getElementById('site-header');const footer=document.getElementById('site-footer');if(header)header.innerHTML=headerHTML(page,document.body.dataset.case || '');if(footer)footer.innerHTML=footerHTML();initNavigation();initContactForm()});
 
 
 /**

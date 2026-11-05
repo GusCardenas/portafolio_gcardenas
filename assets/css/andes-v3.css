@@ -69,3 +69,8 @@ body[data-page="detalle"] .hero::before{background-position:center 61%}body[data
 /* Inicio: números de etapa más visibles en Cómo trabajo. */
 body[data-page="inicio"] .home-approach .process-step b{display:block;font-size:clamp(1.55rem,2.2vw,2rem);font-weight:800;line-height:1.1;letter-spacing:.08em;color:var(--ink)}
 body[data-page="inicio"] .home-approach .process-step h3{margin-top:14px}
+
+/* Logotipo PNG horizontal 2000x540: escala dentro del menú fijo. */
+.site-nav .brand img{width:250px;height:auto;max-height:72px;object-fit:contain}
+@media(max-width:900px){.site-nav .brand img{width:215px;max-height:62px}}
+@media(max-width:640px){.site-nav .brand img{width:185px;max-height:53px}}

@@ -92,10 +92,11 @@ Además de la limitación en PHP (máximo 5 intentos cada 15 minutos por IP), pu
 1. Abrir `https://gcardenas.cl/contacto.html`.
 2. Revisar que la política de privacidad abra y el checkbox sea obligatorio.
 3. Hacer una consulta real desde el navegador.
-4. Comprobar aceptación por el endpoint y después el estado **Delivered** en el panel de Resend.
-5. Verificar recepción del mensaje en `hola@gcardenas.cl` y que **Responder** se dirija al correo del visitante.
-6. Probar un error temporal (por ejemplo clave ausente en un entorno de prueba, sin modificar producción) y confirmar que no se muestra éxito.
-7. Probar límite de envíos, protección honeypot, navegación móvil y logs de Nginx/PHP sin almacenar contenidos del formulario.
+4. Comprobar aceptación por el endpoint y después el estado **Delivered** de **dos correos** en el panel de Resend.
+5. Verificar que la consulta llegue a `hola@gcardenas.cl` y que **Responder** se dirija al visitante.
+6. Verificar que el visitante reciba su correo de confirmación, con copia completa de su mensaje, y que al responder se dirija a `hola@gcardenas.cl`.
+7. Probar un error temporal (por ejemplo clave ausente en un entorno de prueba, sin modificar producción) y confirmar que no se muestra éxito.
+8. Probar límite de envíos, protección honeypot, navegación móvil y logs de Nginx/PHP sin almacenar contenidos del formulario.
 
 Una respuesta `success:true` significa que Resend aceptó el email, **no** garantiza entrega final.
 

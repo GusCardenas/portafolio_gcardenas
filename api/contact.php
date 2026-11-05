@@ -162,28 +162,80 @@ $payload = [
     'subject' => 'Nueva consulta desde gcardenas.cl',
     'html' => '<h2>Nueva consulta desde gcardenas.cl</h2><table style="border-collapse:collapse;width:100%">' . $rows . '</table>',
 ];
-$curl = curl_init('https://api.resend.com/emails');
-curl_setopt_array($curl, [
-    CURLOPT_POST => true,
-    CURLOPT_HTTPHEADER => [
-        'Authorization: Bearer ' . $key,
-        'Content-Type: application/json',
-        'Accept: application/json',
-    ],
-    CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE),
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_CONNECTTIMEOUT => 5,
-    CURLOPT_TIMEOUT => 12,
-    CURLOPT_FOLLOWLOCATION => false,
-]);
-$body = curl_exec($curl);
-$status = (int) curl_getinfo($curl, CURLINFO_HTTP_CODE);
-$curlError = curl_errno($curl);
-curl_close($curl);
-$result = is_string($body) ? json_decode($body, true) : null;
-if ($curlError !== 0 || !in_array($status, [200, 201], true) || !is_array($result) || empty($result['id'])) {
-    error_log('contact: Resend did not accept message, http_status=' . $status . ', transport_error=' . $curlError);
+// Enviar siempre primero la consulta interna. Sólo confirmamos al visitante
+// después de que Resend haya aceptado el mensaje para el destinatario.
+function sendViaResend(string $apiKey, array $payload): bool {
+    $curl = curl_init('https://api.resend.com/emails');
+    if ($curl === false) {
+        error_log('contact: unable to initialize Resend connection');
+        return false;
+    }
+    curl_setopt_array($curl, [
+        CURLOPT_POST => true,
+        CURLOPT_HTTPHEADER => [
+            'Authorization: Bearer ' . $apiKey,
+            'Content-Type: application/json',
+            'Accept: application/json',
+        ],
+        CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_TIMEOUT => 12,
+        CURLOPT_FOLLOWLOCATION => false,
+    ]);
+    $body = curl_exec($curl);
+    $status = (int) curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    $curlError = curl_errno($curl);
+    curl_close($curl);
+    $response = is_string($body) ? json_decode($body, true) : null;
+    if ($curlError !== 0 || !in_array($status, [200, 201], true) || !is_array($response) || empty($response['id'])) {
+        error_log('contact: Resend rejected email, http_status=' . $status . ', transport_error=' . $curlError);
+        return false;
+    }
+    return true;
+}
+
+if (!sendViaResend($key, $payload)) {
     respond(502, 'No fue posible enviar el mensaje. Inténtelo nuevamente más tarde.');
 }
-// Resend acepta el mensaje; su entrega final se verifica en el panel de Resend.
-respond(200, 'Mensaje enviado correctamente. Responderé dentro de un día hábil.', true);
+
+// Confirmación de cortesía para el visitante, incluyendo copia literal de su
+// mensaje con caracteres escapados para impedir la inyección de HTML.
+$ackHtml = '<!doctype html><html lang="es"><head><meta charset="UTF-8"></head>'
+    . '<body style="margin:0;padding:28px 12px;background:#f3f7f9;font-family:Arial,Helvetica,sans-serif;color:#15394a">'
+    . '<table role="presentation" style="width:100%;max-width:620px;margin:0 auto;background:#ffffff;border-collapse:collapse;border-radius:12px">'
+    . '<tr><td style="padding:34px 34px 18px;border-bottom:1px solid #e0e9ed">'
+    . '<p style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#527c8c;margin:0 0 16px">Gustavo Cárdenas · Consultoría y software</p>'
+    . '<h1 style="font-size:25px;line-height:1.3;color:#0b3043;margin:0">Hemos recibido tu consulta</h1>'
+    . '</td></tr><tr><td style="padding:28px 34px 16px">'
+    . '<p style="font-size:16px;line-height:1.7;margin:0 0 16px">Hola ' . $escape($name) . ':</p>'
+    . '<p style="font-size:16px;line-height:1.7;margin:0 0 16px">Gracias por contactarnos. Revisaremos tu mensaje y nos pondremos en contacto contigo <strong>dentro de un día hábil</strong> para aclarar tus dudas y conversar sobre la mejor forma de ayudarte.</p>'
+    . '<p style="font-size:15px;line-height:1.7;margin:0 0 18px">A continuación encontrarás una copia de tu consulta para tus registros.</p>'
+    . '<div style="border-left:3px solid #6b9cab;background:#f3f8fa;padding:18px 20px;border-radius:4px">'
+    . '<p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#527c8c;margin:0 0 10px">Tu mensaje</p>'
+    . '<p style="font-size:15px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;margin:0">' . nl2br($escape($message)) . '</p>'
+    . '</div><p style="font-size:15px;line-height:1.7;margin:24px 0 0">Saludos,<br><strong>Gustavo Cárdenas</strong><br>Consultoría tecnológica y desarrollo de software</p>'
+    . '</td></tr><tr><td style="border-top:1px solid #e0e9ed;padding:20px 34px;font-size:13px;line-height:1.6;color:#527c8c">'
+    . 'Este correo es una confirmación automática de tu consulta. Si necesitas agregar información, puedes responder a este mensaje o escribir a '
+    . '<a href="mailto:'.htmlspecialchars($to, ENT_QUOTES, 'UTF-8').'" style="color:#0b5976">' . $escape($to) . '</a>.'
+    . '</td></tr></table></body></html>';
+
+$ackPayload = [
+    'from' => $from,
+    'to' => [$email],
+    'reply_to' => $to,
+    'subject' => 'Recibimos tu consulta | Gustavo Cárdenas',
+    'html' => $ackHtml,
+    'text' => "Hola {$name}:\n\nGracias por contactarnos. Revisaremos tu mensaje y nos pondremos en contacto contigo dentro de un día hábil para aclarar tus dudas y conversar sobre la mejor forma de ayudarte.\n\nCopia de tu mensaje:\n{$message}\n\nSaludos,\nGustavo Cárdenas\nConsultoría tecnológica y desarrollo de software\n{$to}",
+];
+
+if (!sendViaResend($key, $ackPayload)) {
+    // La consulta interna ya fue aceptada: no indicar error ni pedir reenvío,
+    // para evitar duplicados. Registrar el fallo para seguimiento operativo.
+    error_log('contact: internal inquiry accepted but visitor acknowledgement failed');
+    respond(200, 'Recibí tu consulta y responderé dentro de un día hábil. No se pudo enviar la copia de confirmación por correo.', true);
+}
+
+// Ambas solicitudes han sido aceptadas por Resend. La entrega final se
+// comprueba en el panel de Resend y en las bandejas de entrada.
+respond(200, 'Recibí tu consulta. Te envié una copia por correo y responderé dentro de un día hábil.', true);

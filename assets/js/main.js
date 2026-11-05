@@ -66,6 +66,12 @@ const CASE_HEADER_CONFIG = {
     title: 'Core-Lab y OperacionesLab',
     description: 'Arquitectura y supervisión operativa.',
     buttons: [], metrics: []
+  },
+  privacidad: {
+    eyebrow: 'Información del sitio',
+    title: 'Política de privacidad',
+    description: 'Tratamiento de los datos del formulario de contacto.',
+    buttons: [], metrics: []
   }
 };
 const NAV_LINKS = [

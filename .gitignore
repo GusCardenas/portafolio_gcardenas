@@ -1,1 +1,8 @@
 .idea/
+
+# Configuración privada y temporales
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store

@@ -65,12 +65,12 @@ location = /api/contact.php {
 }
 
 # No permitir ejecución ni descarga accidental de otros archivos PHP.
-location ~* \\.(?:php|phtml)$ {
+location ~* \.(?:php|phtml)$ {
     return 404;
 }
 
 # Bloquear archivos ocultos (.env, .git, etc.) salvo /.well-known.
-location ~ /\\.(?!well-known) {
+location ~ /\.(?!well-known) {
     deny all;
 }
 

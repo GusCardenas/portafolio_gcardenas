@@ -18,8 +18,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     respond(405, 'Método no permitido.');
 }
 
-if (!function_exists('curl_init')) {
-    error_log('contact: missing php-curl');
+if (!function_exists('curl_init') || !function_exists('mb_substr') || !function_exists('mb_strlen')) {
+    error_log('contact: missing required PHP extension (curl or mbstring)');
     respond(503, 'El formulario no está disponible temporalmente.');
 }
 

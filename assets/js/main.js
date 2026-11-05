@@ -143,7 +143,7 @@ function initContactForm() {
     } catch (error) {
       if (feedback) {
         feedback.setAttribute('role','alert');
-        feedback.textContent = error.name === 'AbortError' ? 'El servidor no respondió a tiempo. Compruebe si el mensaje llegó antes de reintentarlo.' : (error.message || 'No fue posible enviar su consulta. Inténtelo nuevamente.');
+        feedback.textContent = error.name === 'AbortError' ? 'El servidor no respondió a tiempo. Compruebe si el mensaje llegó antes de reintentarlo.' : (error.message && /^(Se alcanzó el límite|Debe aceptar|Ingrese su|Describa su consulta)/.test(error.message) ? error.message : 'No fue posible enviar su consulta. Inténtelo nuevamente o escriba a hola@gcardenas.cl.');
       }
     } finally {
       submit.disabled = false;

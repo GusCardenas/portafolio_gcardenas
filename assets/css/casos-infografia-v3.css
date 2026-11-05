@@ -76,7 +76,7 @@ body.case-study main{overflow:clip}
 @media(max-width:640px){.case-study .cl-section{padding:60px 0}.case-study .cl-overview{padding:62px 0}.case-study .cl-overview-visual{min-height:245px}.case-study .cl-overview h2{font-size:clamp(2.15rem,8vw,3rem)}.case-study .cl-problem-grid,.case-study .cl-input-grid,.case-study .cl-outcome-grid{grid-template-columns:1fr}.case-study .cl-problem-card{min-height:0;padding:26px}.case-study .cl-capability{grid-template-columns:1fr;padding:26px}.case-study .cl-core{grid-template-columns:1fr;padding:26px}.case-study .cl-operation{align-items:flex-start;flex-direction:column}.case-study .cl-title-row{display:block}.case-study .cl-system-flow{margin-top:35px}.case-study .cl-method-step{grid-template-columns:30px 1fr}.case-study .cl-visual-caption{left:26px;bottom:25px}}
 
 /* Variantes editoriales del mismo sistema visual */
-.case-study--enlacepro .cl-overview-visual{background:linear-gradient(150deg,rgba(10,42,58,.32),rgba(10,42,58,.67)),url('../img/andes-hero.jpg') center/cover}
+.case-study--enlacepro .cl-overview-visual{background:linear-gradient(150deg,rgba(10,42,58,.32),rgba(10,42,58,.67)),url('../img/enlacepro.jpg') center/cover}
 .case-study--certificacion .cl-overview-visual{background:linear-gradient(150deg,rgba(10,42,58,.30),rgba(10,42,58,.66)),url('../img/mountain-7.webp') center/cover}
 .case-study .cl-system .cl-input-grid--five{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .case-study .cl-system .cl-input-grid--five .cl-node{padding:22px 10px}

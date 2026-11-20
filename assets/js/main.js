@@ -67,6 +67,12 @@ const CASE_HEADER_CONFIG = {
     description: 'Arquitectura y supervisión operativa.',
     buttons: [], metrics: []
   },
+  propiedadesbyl: {
+    eyebrow: 'Proyecto 04 · Plataforma inmobiliaria',
+    title: 'Propiedades BYL',
+    description: 'Presentación de loteos, masterplan interactivo y captación de consultas.',
+    buttons: [], metrics: []
+  },
   privacidad: {
     eyebrow: 'Información del sitio',
     title: 'Política de privacidad',

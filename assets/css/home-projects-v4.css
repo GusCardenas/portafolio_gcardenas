@@ -31,7 +31,3 @@
 @media(max-width:850px){.home-projects.home-projects--v4{padding:70px 0 78px}.home-projects--v4 .projects-intro{display:block;margin-bottom:32px}.home-projects--v4 .projects-intro>.btn-link{display:inline-block;margin-top:12px}.home-projects--v4 .projects-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.home-projects--v4 .project-card:last-child{grid-column:1/-1;max-width:600px}}
 @media(max-width:620px){.home-projects.home-projects--v4{padding:62px 0 68px}.home-projects--v4 .projects-grid{grid-template-columns:1fr;gap:22px}.home-projects--v4 .project-card:last-child{grid-column:auto;max-width:none}.home-projects--v4 .project-card-body{padding:23px}.home-projects--v4 .projects-intro h2{font-size:clamp(2.15rem,8.4vw,3rem)}.home-projects--v4 .projects-intro .muted{font-size:.98rem}}
 @media(prefers-reduced-motion:reduce){.home-projects--v4 .project-card,.home-projects--v4 .project-visual img,.home-projects--v4 .project-card-body>.btn-link i{transition:none!important}.home-projects--v4 .project-card:hover,.home-projects--v4 .project-card:hover .project-visual img,.home-projects--v4 .project-card:hover .project-card-body>.btn-link i{transform:none!important}}
-
-/* Cuatro casos destacados: distribución 2x2, preservando una columna en móvil. */
-@media(min-width:851px){.home-projects--v4 .projects-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1100px;margin-inline:auto}}
-@media(min-width:621px) and (max-width:850px){.home-projects--v4 .project-card:last-child{grid-column:auto;max-width:none}}
